@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يَكُن — نموذج امتحان نوفمبر، الصف الثالث الإعدادي</title>
+<meta name="description" content="منصة يَكُن: امتحانات تفاعلية بنتيجة فورية مع مستر محمود جمال.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+<meta name="theme-color" content="#04060e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b3a6b'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23e7c66a' font-family='sans-serif' font-weight='bold'>ي</text></svg>">
+<style>
+:root{
+  --bg0:#04060e;--bg1:#0a1128;
+  --gold:#e7c66a;--gold2:#ffdf8e;--gold-d:#b8892b;
+  --cyan:#5ee7ff;--violet:#8b7bff;
+  --txt:#eef2ff;--txt2:#a3aecf;--txt3:#717ea3;
+  --brd:rgba(255,255,255,.09);
+  --green:#34d399;--red:#ff6b6b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',system-ui,sans-serif;color:var(--txt);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(1200px 800px at 85% -10%,rgba(139,123,255,.13),transparent 60%),
+    radial-gradient(1000px 700px at 0% 110%,rgba(94,231,255,.08),transparent 55%),
+    linear-gradient(180deg,var(--bg0),var(--bg1) 60%,var(--bg0));
+  background-attachment:fixed}
+::selection{background:rgba(231,198,106,.3)}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:18px 14px 60px}
+a{color:inherit}
+#bg-stars{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.bg-orbs span{position:fixed;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.55}
+.o1{width:430px;height:430px;top:-130px;inset-inline-start:-110px;background:radial-gradient(circle,rgba(184,137,43,.42),transparent 65%);animation:o1 26s ease-in-out infinite}
+.o2{width:460px;height:460px;bottom:-160px;inset-inline-end:-130px;background:radial-gradient(circle,rgba(94,231,255,.30),transparent 65%);animation:o2 32s ease-in-out infinite}
+.o3{width:300px;height:300px;top:38%;inset-inline-start:30%;background:radial-gradient(circle,rgba(139,123,255,.26),transparent 65%);animation:o3 38s ease-in-out infinite}
+@keyframes o1{50%{transform:translate(70px,50px) scale(1.15)}}
+@keyframes o2{50%{transform:translate(-80px,-60px) scale(1.12)}}
+@keyframes o3{50%{transform:translate(-50px,70px) scale(.9)}}
+@keyframes yk-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes yk-glow{0%,100%{filter:drop-shadow(0 0 14px rgba(231,198,106,.35))}50%{filter:drop-shadow(0 0 32px rgba(231,198,106,.62))}}
+.rise{animation:yk-rise .6s ease both}
+.grid>.card{animation:yk-rise .6s ease both}
+.grid>.card:nth-child(2){animation-delay:.07s}
+.grid>.card:nth-child(3){animation-delay:.14s}
+.grid>.card:nth-child(4){animation-delay:.21s}
+.rows>.row{animation:yk-rise .55s ease both}
+.rows>.row:nth-child(2){animation-delay:.06s}
+.rows>.row:nth-child(3){animation-delay:.12s}
+.rows>.row:nth-child(4){animation-delay:.18s}
+.rows>.row:nth-child(5){animation-delay:.24s}
+.rows>.row:nth-child(6){animation-delay:.3s}
+
+/* hero */
+.hero{position:relative;border-radius:26px;overflow:hidden;text-align:center;padding:52px 22px 38px;margin-bottom:26px;
+  background:
+    radial-gradient(ellipse at 50% -20%,rgba(231,198,106,.22),transparent 60%),
+    radial-gradient(ellipse at 90% 110%,rgba(94,231,255,.14),transparent 55%),
+    linear-gradient(165deg,rgba(24,34,68,.82),rgba(8,12,28,.9));
+  border:1px solid rgba(231,198,106,.38);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 24px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.08),inset 0 0 80px rgba(231,198,106,.06)}
+.hero-mark{font-size:86px;font-weight:900;line-height:1.15;
+  background:linear-gradient(115deg,#fff7dd 10%,#ffd76a 45%,#c99a3a 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:yk-glow 3.4s ease-in-out infinite}
+.hero-tag{font-size:18px;font-weight:800;margin-top:4px;
+  background:linear-gradient(90deg,var(--gold2),var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin:14px auto 0;max-width:480px;font-size:15px;line-height:2;color:#c4cfeb}
+.hero-orn{display:block;margin-top:14px;color:rgba(231,198,106,.65);font-size:13px;letter-spacing:10px;text-shadow:0 0 12px rgba(231,198,106,.5)}
+
+/* section heads */
+.sec{margin:28px 0 14px}
+.sec-label{font-size:12.5px;font-weight:800;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--gold2),var(--gold-d));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-title{font-size:23px;font-weight:900;color:#f4f7ff;margin-top:2px;text-shadow:0 0 24px rgba(94,231,255,.12)}
+
+/* grids & cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid.one{grid-template-columns:1fr}
+.card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:18px 16px;border-radius:18px;min-height:130px;text-decoration:none;
+  background:linear-gradient(165deg,rgba(255,255,255,.075),rgba(255,255,255,.02));
+  border:1px solid var(--brd);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 12px 30px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.07);
+  transition:transform .16s ease-out,box-shadow .25s ease,border-color .25s ease;will-change:transform}
+a.card:hover{border-color:rgba(231,198,106,.55);box-shadow:0 22px 46px rgba(0,0,0,.55),0 0 28px rgba(231,198,106,.12),inset 0 1px 0 rgba(255,255,255,.1)}
+.card.soon{opacity:.55}
+.card-ico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;color:var(--gold2);
+  background:linear-gradient(140deg,rgba(231,198,106,.18),rgba(94,231,255,.06));
+  border:1px solid rgba(231,198,106,.35);box-shadow:0 0 18px rgba(231,198,106,.12),inset 0 1px 0 rgba(255,255,255,.08)}
+.card-name{font-size:16px;font-weight:800;color:#f4f7ff}
+.card-note{font-size:12.5px;line-height:1.8;color:var(--txt2)}
+.card-cta{margin-top:auto;font-size:13px;font-weight:800;color:var(--gold);text-shadow:0 0 14px rgba(231,198,106,.35)}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;color:var(--txt2);
+  background:rgba(255,255,255,.05);border:1px solid var(--brd)}
+.card.soon .badge{margin-top:auto}
+
+/* teacher row card */
+.tcard{flex-direction:row;align-items:center;gap:14px;min-height:0}
+.tcard .card-cta{margin:0;margin-inline-start:auto}
+.tbody{display:flex;flex-direction:column;gap:3px}
+
+.avatar{display:inline-flex;align-items:center;justify-content:center;flex:none;width:46px;height:46px;border-radius:50%;font-size:21px;font-weight:900;color:#231603;
+  background:linear-gradient(140deg,#ffe9ad,#c99a3a);box-shadow:0 6px 18px rgba(231,198,106,.35),inset 0 1px 0 rgba(255,255,255,.5)}
+.avatar.lg{width:60px;height:60px;font-size:27px}
+
+/* band */
+.band{display:flex;align-items:center;gap:14px;padding:22px 18px;margin-bottom:18px;border-radius:20px;
+  background:
+    radial-gradient(ellipse at 85% 0%,rgba(231,198,106,.18),transparent 60%),
+    linear-gradient(150deg,rgba(26,38,76,.85),rgba(9,13,30,.9));
+  border:1px solid rgba(231,198,106,.35);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 16px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
+.band.center{display:block;text-align:center}
+.band-title{font-size:25px;font-weight:900;
+  background:linear-gradient(115deg,#fff7dd,#ffd76a 55%,#c99a3a);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.band-sub{margin-top:6px;font-size:13.5px;line-height:1.9;color:#c0cbe8}
+
+/* rows */
+.rows{display:flex;flex-direction:column;gap:10px}
+.row{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;text-decoration:none;
+  background:linear-gradient(165deg,rgba(255,255,255,.065),rgba(255,255,255,.02));
+  border:1px solid var(--brd);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 8px 22px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.06);
+  transition:transform .16s ease-out,box-shadow .25s ease,border-color .25s ease;will-change:transform}
+a.row:hover{border-color:rgba(94,231,255,.5);box-shadow:0 16px 36px rgba(0,0,0,.5),0 0 24px rgba(94,231,255,.12)}
+.row-ico{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;color:var(--cyan);
+  background:rgba(94,231,255,.08);border:1px solid rgba(94,231,255,.3);box-shadow:0 0 16px rgba(94,231,255,.1)}
+.row-body{display:flex;flex-direction:column;gap:3px;min-width:0}
+.row-title{font-size:14.5px;font-weight:800;line-height:1.6;color:#f4f7ff}
+.row-meta{font-size:12px;color:var(--txt2);line-height:1.7}
+.row-cta{margin-inline-start:auto;flex:none;font-size:13px;font-weight:800;color:var(--gold);text-shadow:0 0 12px rgba(231,198,106,.35)}
+.row .badge{margin-inline-start:auto;flex:none}
+
+/* soon card */
+.sooncard{display:flex;gap:14px;align-items:center;padding:18px 16px;border-radius:18px;
+  border:1.5px dashed rgba(231,198,106,.4);background:rgba(231,198,106,.05);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.sooncard p{font-size:13.5px;line-height:1.9;color:var(--txt2)}
+.sooncard b{display:block;color:#f4f7ff;font-size:14.5px}
+
+/* features */
+.feats{display:flex;flex-direction:column;gap:10px}
+.feat{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:16px;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--brd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 8px 22px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06)}
+.feat p{font-size:13.5px;line-height:1.9;color:var(--txt2)}
+.feat b{display:block;color:#f4f7ff;font-size:14.5px}
+.feat-num{flex:none;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#c99a3a);box-shadow:0 0 16px rgba(231,198,106,.35)}
+
+/* back link */
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--gold2);text-decoration:none;margin-bottom:12px;padding:7px 13px;border-radius:10px;
+  background:rgba(231,198,106,.08);border:1px solid rgba(231,198,106,.3);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+/* footer */
+.foot{margin-top:34px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:12.5px;color:var(--txt3);text-align:center;line-height:2}
+
+/* ===== exam ===== */
+.exam-head{text-align:center;margin-bottom:16px}
+.exam-head h1{font-size:27px;font-weight:900;
+  background:linear-gradient(115deg,#fff7dd,#ffd76a 50%,#c99a3a);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.exam-head .fact{font-size:13px;color:var(--gold);font-weight:700;margin-top:4px}
+.exam-head .intro{font-size:14px;color:var(--txt2);line-height:2;margin:10px auto 0;max-width:560px}
+.exam-hero{border-radius:20px;overflow:hidden;margin:16px 0;border:1px solid rgba(231,198,106,.35);
+  box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 34px rgba(231,198,106,.12)}
+.exam-hero img{width:100%;display:block}
+.welcome{position:relative;text-align:center;padding:22px 18px 16px;margin:4px 0 18px;border-radius:20px;
+  border:1px solid rgba(231,198,106,.4);
+  background:linear-gradient(160deg,rgba(231,198,106,.12),rgba(94,231,255,.04));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 14px 34px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08)}
+.welcome-mark{display:block;font-size:34px;line-height:1;color:var(--gold);margin-bottom:4px;text-shadow:0 0 18px rgba(231,198,106,.6)}
+.welcome-text{font-size:19px;line-height:1.9;font-weight:800;color:#fdf6df}
+.welcome-sign{margin-top:8px;font-size:13px;color:var(--gold2);font-weight:700}
+
+.facts{border:1px solid var(--brd);border-radius:16px;overflow:hidden;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.fact-row{display:flex;gap:10px;padding:12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.fact-row:first-child{border-top:none}
+.fact-row b{flex:none;min-width:110px;font-size:13.5px;color:#ffe9ad}
+.fact-row span{font-size:13px;color:var(--txt2);line-height:1.9}
+.tip{margin-top:12px;padding:12px 14px;border-radius:14px;font-size:13.5px;line-height:1.9;
+  background:rgba(231,198,106,.08);border:1px solid rgba(231,198,106,.35);color:var(--txt2)}
+.tip b{color:var(--gold2)}
+
+.form{display:flex;flex-direction:column;gap:10px}
+.label{font-weight:700;font-size:14px;color:#e8edff}
+.input{font:inherit;padding:12px 14px;border:1px solid var(--brd);border-radius:12px;font-size:15px;min-height:48px;
+  background:rgba(6,10,24,.65);color:var(--txt);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.input::placeholder{color:var(--txt3)}
+.input:focus{outline:2px solid rgba(231,198,106,.7);outline-offset:1px;box-shadow:0 0 18px rgba(231,198,106,.2)}
+.err{color:var(--red);font-size:13px}
+.btn{font:inherit;font-weight:900;font-size:17px;padding:14px 18px;border:none;border-radius:14px;cursor:pointer;width:100%;min-height:52px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#d4a93f);box-shadow:0 10px 26px rgba(231,198,106,.3),inset 0 1px 0 rgba(255,255,255,.55);
+  transition:transform .15s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(231,198,106,.42),inset 0 1px 0 rgba(255,255,255,.55)}
+.btn:active{opacity:.85}
+.hint{color:var(--txt3);font-size:13px;margin-top:4px;line-height:1.9}
+
+.clock{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 12px;padding:12px 16px;border-radius:16px;margin-bottom:14px;
+  background:rgba(94,231,255,.06);border:1px solid rgba(94,231,255,.3);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.clock-label{font-size:13px;color:var(--txt2);font-weight:700}
+.clock-time{font-size:30px;font-weight:900;color:var(--cyan);font-variant-numeric:tabular-nums;line-height:1;text-shadow:0 0 18px rgba(94,231,255,.45)}
+.clock-bar{grid-column:1/-1;height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+.clock-bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold2));transition:width 1s linear}
+.clock.low{background:rgba(255,107,107,.08);border-color:rgba(255,107,107,.5)}
+.clock.low .clock-time{color:var(--red);text-shadow:0 0 18px rgba(255,107,107,.5)}
+.clock.low .clock-bar>span{background:var(--red)}
+.progress{height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden;margin:8px 0 14px}
+.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--gold2),var(--cyan));transition:width .25s}
+.who{font-size:13px;font-weight:800;color:var(--gold2);margin-bottom:6px}
+
+.q{border-radius:16px;padding:14px;margin:0 0 12px;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--brd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 10px 26px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06)}
+.q-stem{font-weight:800;font-size:16px;margin:0 0 10px;line-height:1.9;color:#f4f7ff}
+.q-num{display:inline-flex;min-width:26px;height:26px;line-height:26px;text-align:center;align-items:center;justify-content:center;border-radius:50%;font-size:14px;margin-inline-end:6px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#c99a3a);box-shadow:0 0 14px rgba(231,198,106,.35)}
+.choices{display:flex;flex-direction:column;gap:6px}
+.choice{font:inherit;display:flex;align-items:center;gap:10px;text-align:start;padding:12px 14px;border-radius:12px;font-size:14px;cursor:pointer;line-height:1.7;min-height:48px;
+  background:rgba(6,10,24,.5);border:1px solid var(--brd);color:var(--txt);transition:border-color .15s,background .15s,box-shadow .2s}
+.choice:not(:disabled):hover{border-color:rgba(94,231,255,.5)}
+.choice:disabled{cursor:default}
+.letter{flex:none;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--gold2);background:rgba(231,198,106,.1);border:1px solid rgba(231,198,106,.25)}
+.choice.picked{border-color:var(--gold);background:rgba(231,198,106,.12);font-weight:700;box-shadow:0 0 18px rgba(231,198,106,.18)}
+.choice.picked .letter{background:linear-gradient(135deg,#ffe9ad,#c99a3a);color:#231603;border-color:transparent}
+.choice.correct{border-color:var(--green);background:rgba(52,211,153,.1);font-weight:700}
+.choice.correct .letter{background:var(--green);color:#06130d;border-color:transparent}
+.choice.wrong{border-color:var(--red);background:rgba(255,107,107,.08)}
+.choice.wrong .letter{background:var(--red);color:#170608;border-color:transparent}
+.q-answer{font-size:13px;color:#9fe8c0;font-weight:700;margin:8px 0 0}
+.qsec{font-size:19px;font-weight:900;margin:20px 0 4px;
+  background:linear-gradient(90deg,#fff7dd,#ffd76a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.qsec-label{font-size:12.5px;color:var(--gold);font-weight:700;margin-bottom:10px}
+
+.result{text-align:center;padding:22px 14px;border-radius:20px;border:1px solid var(--brd);
+  background:linear-gradient(165deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 16px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
+.score{font-size:56px;font-weight:900;margin:0;
+  background:linear-gradient(115deg,#fff7dd,#ffd76a 50%,#c99a3a);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 24px rgba(231,198,106,.4))}
+.score-of{font-size:18px;color:var(--txt2);font-weight:400}
+.score-note{font-size:15.5px;margin:6px 0 12px;font-weight:700;color:#f4f7ff}
+.breakdown{list-style:none;margin:0 0 12px;font-size:14px;color:var(--txt2);display:flex;flex-direction:column;gap:6px}
+.breakdown li{padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--brd)}
+.send{margin:10px 0;font-size:14px;font-weight:700;padding:10px 14px;border-radius:10px}
+.send.sending{background:rgba(231,198,106,.12);color:var(--gold2)}
+.send.sent{background:rgba(52,211,153,.12);color:var(--green)}
+.send.failed{background:rgba(255,107,107,.1);color:var(--red)}
+.retry{display:inline-block;font-weight:900;font-size:16px;padding:12px 22px;border-radius:12px;text-decoration:none;margin-top:6px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#d4a93f);box-shadow:0 8px 22px rgba(231,198,106,.3)}
+.timer-done{font-size:14px;color:var(--txt2);text-align:center;margin-bottom:14px}
+@media (max-width:480px){.hero-mark{font-size:66px}.grid{gap:10px}}
+@media (prefers-reduced-motion:reduce){.o1,.o2,.o3,.hero-mark{animation:none}.rise,.grid>.card,.rows>.row{animation:none}}
+</style>
+<style>
+.passage{background:rgba(94,231,255,.06);border:1px solid rgba(94,231,255,.25);border-radius:16px;padding:14px 16px;margin:8px 0 14px;font-size:14px;line-height:2.1;color:var(--txt)}
+.passage b{color:var(--cyan)}
+.poem{white-space:pre-line;text-align:center;font-weight:700;font-size:15px;line-height:2.4}
+.trbox{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--brd);background:rgba(255,255,255,.04);color:var(--txt);font-family:inherit;font-size:14px;padding:10px 12px;resize:vertical}
+.model{background:rgba(231,198,106,.08);border:1px solid rgba(231,198,106,.3);border-radius:12px;padding:10px 14px;margin-top:8px;font-size:13.5px;line-height:2;color:var(--txt)}
+.model b{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<canvas id="bg-stars" aria-hidden="true"></canvas>
+<script>const DATA={"title": "نموذج امتحان شهر نوفمبر", "grade": "الصف الثالث الإعدادي", "limit": 7200, "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScEWDbD8AkDyi1I6DwpUOB-gvDDlSwq7ZKpK5wEm2s4Io76Xw/formResponse", "viewUrl": "https://docs.google.com/forms/d/e/1FAIpQLScEWDbD8AkDyi1I6DwpUOB-gvDDlSwq7ZKpK5wEm2s4Io76Xw/viewform", "entry": {"name": "entry.1765923831", "klass": "entry.1632060233", "score": "entry.1993704302", "time": "entry.436783136", "details": "entry.1838141593"}, "intro": "امتحان تفاعلي على منصة يَكُن للصف الثالث الإعدادي (نموذج نوفمبر): القراءة والنصوص النثرية والشعرية والنحو. الأسئلة الموضوعية بدرجة فورية، وفي النهاية قسم أسئلة مقالية تُصحح بالمعنى بالذكاء الاصطناعي، وتصل درجتك عند مستر محمود جمال تلقائيًا. ملحوظة: الورقة الأصلية تبدأ من «ثانيًا: القراءة»، فالقسم الأول غير مرفق في النموذج.", "foot": "أُعد وفق مواصفات امتحان اللغة العربية للمرحلة الإعدادية، بإعداد مستر محمود جمال.", "sections": [{"title": "ثانيًا: القراءة — النص (١) «أغلى من الذهب»", "short": "القراءة (١)", "text": "دَخَلَ رَشْوانُ مُنافَساتِ الأُولِمْبِيادِ بِثِقَةٍ وَثَباتٍ، وَنَجَحَ فِي تَحْقِيقِ انْتِصارَاتٍ ساحِقَةٍ قادَتْهُ إِلَى الْمُباراةِ النِّهائِيَّةِ؛ لِيَصْطَدِمَ بِأَحَدِ أَعْظَمِ لاعِبِي (الْجُودُو) فِي التَّارِيخِ الْيابانِيِّ (ياماشِيتَا) بَطَلِ الْعالَمِ. وَقَبْلَ انْطِلاقِ النِّزالِ الْحاسِمِ، عَلِمَ رَشْوانُ أَنَّ مُنافِسَهُ يُعانِي مِنْ إِصابَةٍ بالِغَةٍ فِي ساقِهِ الْيُمْنَى، وَهِيَ نُقْطَةُ ضَعْفٍ لَوِ اسْتَغَلَّها لَكانَتْ كَفِيلَةً بِمَنْحِهِ الْمِيدالِيَّةَ الذَّهَبِيَّةَ. لَكِنَّ ما حَدَثَ بَعْدَ ذلِكَ أَذْهَلَ الْعالَمَ، فَقَدِ اتُّخِذَ قَرارًا تارِيخِيًّا بِتَجَنُّبِ الْهُجُومِ عَلَى الْقَدَمِ الْمُصابَةِ تَمامًا، مُفَضِّلًا أَنْ يَخْسَرَ الْمُباراةَ بِشَرَفٍ وَمُرُوءَةٍ، عَلَى أَنْ يَفُوزَ بِطَرِيقَةٍ تَتَّنافَى مَعَ آدابِ اللَّعِبِ النَّظِيفِ.", "items": [{"t": "mcq", "stem": "مرادف كلمة «ساحقة»:", "choices": ["حاسمة أو قاطعة", "متابعة", "متوقعة"]}, {"t": "mcq", "stem": "مضاد كلمة «تتنافى»:", "choices": ["تتوافق", "تتقارب", "تندمج", "تتكامل"]}]}, {"title": "القراءة — النص الثاني: «الصداقة» للدكتور شوقي ضيف", "short": "القراءة (٢)", "text": "وَلا بُدَّ أَخِيرًا مِنَ التَّرَوِّي وَالتَّثَبُّتِ فِي اخْتِيارِ الصَّدِيقِ وَالأَصْدِقاءِ؛ خَشْيَةَ الزَّلَلِ وَالوُقُوعِ فِيمَنْ لا يَسْتَحِقُّونَ صَداقَتَكَ، فَكَمْ مِنْ أُناسٍ غَرَّهُمْ خِداعٌ مِنْ حَوْلِهِمْ وَكَلِماتُهُمُ الْمَعْسُولَةُ! فَاتَّخَذُوهُمْ أَصْدِقاءَ لَهُمْ، حَتَّى إِذا دارَتْ بِهِمُ الأَيَّامُ أَظْهَرُوا لَهُمُ الْعَداوَةَ، وَأَصْبَحَ أَنَّهُمْ لَمْ يَكُونُوا لَهُمْ وُدًّا بَلْ بُغْضًا وَمَوَجِدَةً. فَاعْلَمْ، يا بُنَيَّ، أَنَّ الصَّدِيقَ لَيْسَ مُجَرَّدَ رَفِيقٍ عابِرٍ فِي رِحْلَتِكَ، بَلْ هُوَ شَرِيكٌ أَساسِيٌّ فِي صِياغَةِ مُسْتَقْبَلِكَ، وَنَحْتِ مَلامِحِ شَخْصِيَّتِكَ، فَبِقَدْرِ وَعْيِكَ فِي انْتِقاءِ صَدِيقِكَ، يَكُونُ نَجاحُكَ فِي صِناعَةِ غَدِكَ.", "items": [{"t": "mcq", "stem": "المراد بكلمة «مَوَجِدَة»:", "choices": ["كراهية وعداوة", "نفاق ورياء", "غضب وسخط", "إهمال واحتقار"]}, {"t": "mcq", "stem": "علاقة قوله «خَشْيَةَ الزَّلَلِ» بما قبله:", "choices": ["تعليل", "توضيح", "نتيجة", "تفصيل"]}]}, {"title": "ثالثًا: النصوص — النثري «آداب التعامل مع الوالدين» (إجباري)", "short": "النصوص النثرية", "text": "إِنَّ التَّعامُلَ مَعَ الْوالِدَيْنِ يَسْتَلْزِمُ اتِّباعَ أُسْلُوبٍ راقٍ فِي الأَقْوالِ وَالأَفْعالِ؛ لِما لِلْوالِدَيْنِ مِنْ فَضْلٍ عَظِيمٍ وَمَكانَةٍ رَفِيعَةٍ. فَالأَبْناءُ مُطالَبُونَ بِإِظْهارِ الاحْتِرامِ وَالتَّقْدِيرِ فِي كُلِّ الأَحْوالِ، سَواءً أَكانَ ذلِكَ عِنْدَ الاتِّفاقِ أَمْ عِنْدَ الاخْتِلافِ.", "items": [{"t": "mcq", "stem": "مرادف كلمة «راقٍ»:", "choices": ["مهذب", "متواضع", "ضعيف", "صامت"]}, {"t": "mcq", "stem": "مضاد كلمة «رَفِيعَة»:", "choices": ["متدنية", "قوية", "عالية", "نادرة"]}, {"t": "mcq", "stem": "«سَواءً أَكانَ ذلِكَ عِنْدَ الاتِّفاقِ أَمْ عِنْدَ الاخْتِلافِ» يفيد:", "choices": ["الشمول والعموم", "التردد", "التخيير", "التخصيص"]}]}, {"title": "النصوص — الشعري: «تحية للشباب» لأحمد شوقي", "short": "النصوص الشعرية", "text": "أَنْتُمْ غَدًا أَهْلُ الْأُمُورِ وَإِنَّمَا :: كُنَّا عَلَيْكُمْ فِي الْأُمُورِ وُفُودَا\nفَابْنُوا عَلَى أُسِّ الزَّمَانِ وَرُوحِهِ :: رُكْنَ الْحَضَارَةِ بَاذِخًا وَشَدِيدَا\nإِنَّ الَّذِي قَسَمَ الْبِلادَ حَبَاكُمْ :: بَلَدًا كَأَوْطانِ النُّجُومِ مَجِيدَا", "items": [{"t": "mcq", "stem": "مرادف كلمة «باذِخًا»:", "choices": ["شامخًا", "مزينًا", "خالدًا", "ثابتًا"]}, {"t": "mcq", "stem": "مفرد كلمة «أُسِّ»:", "choices": ["أساس", "مؤسس", "ساس", "مسيس"]}, {"t": "mcq", "stem": "«إِنَّ الَّذِي قَسَمَ الْبِلادَ حَبَاكُمْ» أسلوب:", "choices": ["توكيد", "نفي", "نداء", "استفهام"]}]}, {"title": "رابعًا: النحو", "short": "النحو", "text": "يا شبابَ مصرَ، إِنَّ الوطنَ مَبْنِيٌّ على سَواعِدِكُم، فَأَنْتُمْ قادَةُ المُسْتَقْبَلِ الْمُشْرِقِ، كُونُوا طُلَّابًا مُدْرِكِينَ لِلتَّحَدِّياتِ، وَمُتَمَسِّكِينَ بِالْأَخْلاقِ النَّبِيلَةِ. فَالطَّالِبُ الْمُجْتَهِدُ مَحْمُودٌ بَيْنَ النَّاسِ، وَمُحَقِّقُ النَّجاحِ يَعْمَلُهُ؛ لِيَكُونَ ذُخْرًا لِوَطَنِهِ الْمَصانِ بِعَزائِمِ الْمُخْلِصِينَ.", "items": [{"t": "mcq", "stem": "إعراب كلمة «الوطنَ»:", "choices": ["اسم إن منصوب", "مبتدأ مرفوع", "خبر إن مرفوع", "فاعل مرفوع"]}, {"t": "mcq", "stem": "إعراب كلمة «طُلَّابًا»:", "choices": ["خبر كان منصوب", "حال منصوب", "مفعول به منصوب", "تمييز منصوب"]}, {"t": "mcq", "stem": "اسم فاعل من فعل ثلاثي في الفقرة:", "choices": ["قادة", "مدركين", "متمسكين", "المجتهد"]}, {"t": "mcq", "stem": "اسم مفعول من فعل ثلاثي في الفقرة:", "choices": ["مبني", "مدركين", "قادة", "طلاب"]}, {"t": "mcq", "stem": "نوع المشتق «مختار» في «المعلم مختار الطلاب»:", "choices": ["اسم فاعل", "اسم مفعول"]}, {"t": "mcq", "stem": "نوع المشتق «مختار» في «الطالب مختار من المعلم»:", "choices": ["اسم مفعول", "اسم فاعل"]}, {"t": "mcq", "stem": "الصيغة الصحيحة لتحويل اسم المفعول إلى اسم فاعل في «البترول مُسْتَخْرَجٌ من باطن الأرض»:", "choices": ["المهندس مُسْتَخْرِجٌ البترولَ من باطن الأرض", "البترول مُسْتَخْرِجٌ من باطن الأرض", "المهندس مُسْتَخْرَجٌ البترولَ من باطن الأرض"]}, {"t": "mcq", "stem": "التصويب الصحيح لجملة «أنت ساعي في الخير»:", "choices": ["أنت ساعٍ في الخير", "أنت ساعيًا في الخير", "الجملة صحيحة كما هي"]}]}], "train": [{"stem": "ما القرار التاريخي الذي اتخذه محمد رشوان؟ ولماذا أذهل العالم؟", "model": "القرار التاريخي: <b>تجنب الهجوم على القدم المصابة لمنافسه تمامًا مفضلًا خسارة المباراة بشرف</b>. أذهل العالم لأنه فضل الالتزام بالأخلاق والروح الرياضية الشريفة على الفوز بالميدالية بطريقة غير نبيلة."}, {"stem": "كيف احتفى العالم برشوان؟", "model": "منحه الميدالية الذهبية للعب النظيف، ونال إشادة وتكريم المؤسسات الرياضية الدولية ووسائل الإعلام العالمية كرمز للأخلاق الرياضية."}, {"stem": "حذر الكاتب من الاغترار ببعض الأصدقاء. وضح ذلك من خلال الفقرة.", "model": "حذر من الأصدقاء الذين يظهرون المحبة والمودة بالكلمات المعسولة والخداع، حتى إذا دارت الأيام أظهروا العداوة والبغضاء."}, {"stem": "«الصديق شريك أساسي في صياغة مستقبلك». كيف يتحقق ذلك كما يرى الكاتب؟", "model": "الصديق ينحت ملامح شخصية صديقه، وبقدر الوعي في اختيار الصديق يكون النجاح في صناعة المستقبل."}, {"stem": "ما صفات الصديق الوفي كما ذكرها شوقي ضيف؟", "model": "أن يكون سندًا حقيقيًا لا مجرد رفيق عابر، يحرص على مصلحة صديقه ويصدقه القول ولا يحمل له بغضًا أو عداوة."}, {"stem": "ما الذي يستلزمه التعامل مع الوالدين كما تفهم من الفقرة؟ ولماذا؟", "model": "يستلزم اتباع أسلوب راقٍ في الأقوال والأفعال وإظهار الاحترام والتقدير في كل الأحوال؛ <b>لما للوالدين من فضل عظيم ومكانة رفيعة سامية</b>."}, {"stem": "بم كلف الشاعر الشباب في الأبيات؟ وبم وصف وطنهم؟", "model": "كلفهم ببناء نهضة الوطن وركن الحضارة الشامخ وأن يكونوا أهلًا للأمور وقادة للمستقبل. ووصف وطنهم بأنه <b>بلد مجيد كأوطان النجوم العالية</b>."}]};</script>
+
+
+<script>
+const AR='٠١٢٣٤٥٦٧٨٩';
+const toAr=s=>String(s).replace(/[0-9]/g,d=>AR[+d]);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const st={phase:'intro',name:'',klass:'',ans:{},start:0,elapsed:0,finalTime:0,confirming:false,timedOut:false,send:'idle',timerId:null,trAnswers:{},essay:null};
+const GRADED=[];
+DATA.sections.forEach((s,si)=>s.items.forEach((q,qi)=>{if(q.t!=='note')GRADED.push([si,qi]);}));
+const TOTAL=GRADED.length;
+const answered=()=>GRADED.filter(([si,qi])=>st.ans[si+'-'+qi]!==undefined&&st.ans[si+'-'+qi]!==null).length;
+const unanswered=()=>TOTAL-answered();
+const scores=()=>{
+ const per=DATA.sections.map((s,si)=>s.items.reduce((n,q,qi)=>{
+  if(q.t==='note')return n;
+  const a=st.ans[si+'-'+qi];
+  if(q.t==='tf')return n+(a===q.answer?1:0);
+  return n+(a===0?1:0); /* mcq: correct choice always index 0, shuffled at render */
+ },0));
+ return{per,total:per.reduce((a,b)=>a+b,0)};
+};
+const finalScore=()=>{const sc=scores();const em=st.essay?st.essay.marks.reduce((a,b)=>a+b,0):0;return{per:sc.per,total:sc.total+em,em};};
+const GRADERS=['/api/grade','https://yakun-grader.mahmoudgamal90012.workers.dev'];
+const normAr=s=>(s||'').replace(/[\u064B-\u065F\u0670]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').toLowerCase();
+const STOPW=new Set(['في','من','على','الى','عن','ان','او','ثم','الذي','التي','هو','هي','هذا','هذه','ذلك','مع','كل','لم','لا','ما','قد','يا','بين','عند','بعد','قبل','غير','كان','كما','لكن']);
+const localGrade=(model,student)=>{const kw=normAr(model).split(/[^\u0621-\u064A0-9\u0660-\u0669]+/).filter(w=>w.length>2&&!STOPW.has(w));const ss=normAr(student);if(!kw.length)return 'جزئي';let hit=0;kw.forEach(w=>{if(ss.includes(w))hit++;});const r=hit/kw.length;return r>=0.5?'صح':r>=0.25?'جزئي':'خطأ';};
+const gradeOne=async(q,m,s)=>{if(!s.trim())return 'خطأ';for(const url of GRADERS){try{const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),15000);const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,model:m,student:s}),signal:ctl.signal});clearTimeout(to);if(!r.ok)continue;const j=await r.json();if(j&&['صح','جزئي','خطأ'].includes(j.verdict))return j.verdict;}catch(e){}}return localGrade(m,s);};
+const gradeEssays=async()=>{const verdicts=[],marks=[];for(let ti=0;ti<DATA.train.length;ti++){const v=await gradeOne(DATA.train[ti].stem,DATA.train[ti].model.replace(/<[^>]+>/g,''),st.trAnswers['tr'+ti]||'');verdicts.push(v);marks.push(v==='صح'?1:v==='جزئي'?0.5:0);}st.essay={verdicts,marks};};
+const detailsText=per=>DATA.sections.map((s,i)=>`${s.short} ${toAr(per[i])}/${toAr(s.items.filter(q=>q.t!=='note').length)}`).join(' - ')+' - المقالي بالمعنى: '+toAr(st.essay?st.essay.marks.reduce((a,b)=>a+b,0):0)+'/'+toAr(DATA.train.length);
+const encourage=(t,mx)=>t>=Math.ceil(mx*.85)?'🌟 ممتاز! نتيجة تشرّف، مستر محمود هيفتخر بيك':t>=Math.ceil(mx*.7)?'🎉 جيد جدًا! راجع أخطاءك بالأسفل وهتبقى من الأوائل':t>=Math.ceil(mx*.5)?'💪 ناجح! راجع أخطاءك وحاول تاني، هتطلع أحسن':'📖 محتاج تراجع الدروس كويس وتعيد المحاولة، إنت تقدر';
+const LETTERS=['أ','ب','ج','د','هـ','و'];
+
+function qhtml(q,si,qi,n,graded){
+ const key=si+'-'+qi, picked=st.ans[key];
+ let h=`<div class="q"><p class="q-stem"><span class="q-num">${toAr(n)}</span> ${q.stem}</p><div class="choices" role="radiogroup">`;
+ if(q.t==='tf'){
+  [['صح ✔',true],['خطأ ✘',false]].forEach(([label,val],ci)=>{
+   const correct=val===q.answer;
+   const cls=graded?(correct?'correct':picked===val?'wrong':''):(picked===val?'picked':'');
+   h+=`<button type="button" class="choice ${cls}" data-k="${key}" data-v="${val}" ${graded?'disabled':''}><span class="letter">${LETTERS[ci]}</span><span>${label}</span></button>`;
+  });
+  h+=`</div>${graded&&picked!==q.answer?`<p class="q-answer">الإجابة الصحيحة: ${q.answer?'صح ✔':'خطأ ✘'}</p>`:''}</div>`;
+ } else {
+  /* mcq: correct is index 0 in data; shuffle deterministically per question */
+  const order=q.choices.map((_,i)=>i);
+  let seed=(si+1)*97+(qi+1)*13;
+  for(let i=order.length-1;i>0;i--){seed=(seed*9301+49297)%233280;const j=seed%(i+1);const t=order[i];order[i]=order[j];order[j]=t;}
+  order.forEach((oi,ci)=>{
+   const correct=oi===0;
+   const cls=graded?(correct?'correct':picked===oi?'wrong':''):(picked===oi?'picked':'');
+   h+=`<button type="button" class="choice ${cls}" data-k="${key}" data-v="${oi}" ${graded?'disabled':''}><span class="letter">${LETTERS[ci]}</span><span>${q.choices[oi]}</span></button>`;
+  });
+  h+=`</div>${graded&&picked!==0?`<p class="q-answer">الإجابة الصحيحة: ${q.choices[0]}</p>`:''}</div>`;
+ }
+ return h;
+}
+
+function examPage(){
+ if(st.phase==='grading')return `<div class="sec" style="text-align:center;padding:40px"><h2 class="sec-title">⏳ جاري تصحيح إجاباتك المقالية بالذكاء الاصطناعي...</h2><p class="qsec-label">ثوانٍ وتظهر نتيجتك النهائية. التقييم بالمعنى وليس بالمطابقة الحرفية</p></div>`;
+ const graded=st.phase==='done';
+ let html=`
+ <a class="back" href="index.html#/teacher">العودة لصفحة مستر محمود ←</a>
+ <div class="exam-head rise">
+   <h1>${DATA.title}</h1>
+   <p class="fact">منصة يَكُن، ${DATA.grade}، اللغة العربية، ${toAr(TOTAL)} سؤالًا بدرجة فورية + ${toAr(DATA.train.length)} أسئلة مقالية تُصحح بالمعنى، المدة ${toAr(DATA.limit/60)} دقيقة</p>
+   <p class="intro">${DATA.intro}</p>
+ </div>
+ <div class="exam-hero rise"><img loading="lazy" decoding="async" src="hero.jpg" alt="كتاب مفتوح وقلم ودواة نحاسية وزخارف إسلامية ذهبية على خلفية كحلية"></div>`;
+ if(st.phase==='intro'){
+  html+=`
+  <div class="tip rise"><b>قبل أن تبدأ: </b>اقرأ كل سؤال بتركيز. الأسئلة الموضوعية (اختر وصح/خطأ) عليها الدرجة الفورية، وقسم «التدريب المقالي» في الآخر بلا درجة، وتظهر لك إجاباته النموذجية بعد التسليم.</div>
+  <div class="sec rise"><p class="sec-label">بياناتك</p></div>
+  <div class="form rise">
+    <label class="label" for="qname">اسم الطالب</label>
+    <input id="qname" class="input" type="text" placeholder="مثال: أحمد محمد علي" value="${esc(st.name)}">
+    <label class="label" for="qclass">الفصل</label>
+    <input id="qclass" class="input" type="text" placeholder="مثال: ٤/٢" value="${esc(st.klass)}">
+    <p class="err" id="nameErr" role="alert" style="display:none">اكتب اسمك حتى تُسجَّل درجتك باسمك</p>
+    <button type="button" class="btn" id="startBtn">ابدأ الامتحان ←</button>
+    <p class="hint">${toAr(TOTAL)} سؤالًا بدرجة فورية، درجة لكل سؤال، وأسئلة مقالية يصححها الذكاء الاصطناعي بالمعنى، والمدة ${toAr(DATA.limit/60)} دقيقة. يبدأ العداد حين تضغط «ابدأ الامتحان»، ويُسلَّم الامتحان تلقائيًا عند انتهاء الوقت حتى لو لم تنتهِ.</p>
+  </div>`;
+ } else {
+  const remaining=Math.max(0,DATA.limit-st.elapsed);
+  const ttxt=`${toAr(String(Math.floor(remaining/60)).padStart(2,'0'))}:${toAr(String(remaining%60).padStart(2,'0'))}`;
+  html+=`<p class="who">الطالب: ${esc(st.name)}${st.klass?`، الفصل: ${esc(st.klass)}`:''}</p>`;
+  if(st.phase==='exam'){
+   html+=`<div class="clock ${remaining<=300?'low':''}" role="timer"><span class="clock-label">الوقت المتبقي</span><span class="clock-time">${ttxt}</span><span class="clock-bar"><span style="width:${Math.round(remaining/DATA.limit*100)}%"></span></span></div>
+   <div class="progress" aria-label="التقدم"><span style="width:${Math.round(answered()/TOTAL*100)}%"></span></div>`;
+  } else {
+   html+=`<p class="timer-done">${st.timedOut?'انتهى الوقت وسُلِّم امتحانك تلقائيًا.':`أنهيت الامتحان في ${toAr(Math.floor(st.finalTime/60))} دقيقة و${toAr(st.finalTime%60)} ثانية`}</p>`;
+  }
+  let n=0;
+  const ARNUM=['الأول','الثاني','الثالث','الرابع','الخامس','السادس','السابع'];
+  DATA.sections.forEach((sec,si)=>{
+   html+=`<p class="qsec">القسم ${ARNUM[si]}: ${sec.title}</p>`;
+   if(sec.text)html+=`<div class="passage ${sec.poem?'poem':''}">${sec.text}</div>`;
+   sec.items.forEach((q,qi)=>{
+    if(q.t==='note'){html+=`<p class="qsec-label">${q.stem}</p>`;return;}
+    n++;
+    html+=qhtml(q,si,qi,n,graded);
+   });
+  });
+  /* training section */
+  html+=`<p class="qsec">القسم الأخير: الأسئلة المقالية</p><p class="qsec-label">أجب بأسلوبك. سيقيّم الذكاء الاصطناعي إجابتك بالمعنى مقارنة بالإجابة النموذجية: صح = درجة، جزئي = نصف درجة</p>`;
+  DATA.train.forEach((t,ti)=>{
+   html+=`<div class="q"><p class="q-stem"><span class="q-num">${toAr(ti+1)}</span> ${t.stem}</p>`;
+   if(graded){const sa=(st.trAnswers['tr'+ti]||'').trim();const v=st.essay?st.essay.verdicts[ti]:null;const vtxt=v==='صح'?'✅ صح (درجة)':v==='جزئي'?'🟡 جزئي (نصف درجة)':'❌ خطأ';
+    html+=sa?`<div class="model" style="border-color:rgba(94,231,255,.3);background:rgba(94,231,255,.06)"><b>إجابتك: </b>${esc(sa)}. <b>التقييم بالمعنى: ${vtxt}</b></div>`:`<div class="model" style="border-color:rgba(179,57,47,.35)"><b>لم تُجب على هذا السؤال.</b></div>`;
+    html+=`<div class="model"><b>الإجابة النموذجية: </b>${t.model}</div>`;}
+   else{html+=`<textarea class="trbox" id="tr${ti}" placeholder="اكتب إجابتك هنا...">${esc(st.trAnswers['tr'+ti]||'')}</textarea>`;}
+   html+=`</div>`;
+  });
+  if(st.phase==='exam'){
+   html+=`<div class="sec"><h2 class="sec-title">التسليم</h2></div>`;
+   if(st.confirming&&unanswered()>0) html+=`<div class="tip" style="background:rgba(179,57,47,.08);border-color:rgba(179,57,47,.35)"><b style="color:var(--red)">عندك أسئلة من غير إجابة: </b>تركت ${toAr(unanswered())} ${unanswered()===1?'سؤالًا':unanswered()===2?'سؤالين':unanswered()<=10?'أسئلة':'سؤالًا'} بلا إجابة وستحسب خطأ. اضغط «تأكيد التسليم» لو تريد التسليم الآن.</div>`;
+   html+=`<button type="button" class="btn" id="submitBtn" style="margin-top:10px">${st.confirming&&unanswered()>0?'تأكيد التسليم':'تسليم الإجابات'}</button>`;
+  } else {
+   const sc=finalScore();
+   html+=`<div class="sec"><h2 class="sec-title">النتيجة</h2></div>
+   <div class="result">
+     <p class="score">${toAr(sc.total)} <span class="score-of">من ${toAr(TOTAL+DATA.train.length)}</span></p>
+     <p class="score-note">${encourage(sc.total,TOTAL+DATA.train.length)}</p>
+     <ul class="breakdown">${DATA.sections.map((sec,i)=>`<li>${sec.short}: ${toAr(sc.per[i])} من ${toAr(sec.items.filter(q=>q.t!=='note').length)}</li>`).join('')+`<li>المقالي (تقييم بالمعنى): ${toAr(sc.em)} من ${toAr(DATA.train.length)}</li>`}</ul>
+     <p class="send ${st.send}" role="status">${
+       st.send==='sending'?'جاري تسجيل درجتك عند مستر محمود...':
+       st.send==='sent'?'✅ وصلت درجتك لمستر محمود تلقائيًا. راجع إجاباتك بالأسفل.':
+       st.send==='failed'?'سُلِّم امتحانك وحُسبت درجتك، لكن التسجيل التلقائي لم يكتمل. اضغط الزر بالأسفل وسيُسجَّل في ثوانٍ.':''}</p>
+     ${st.send==='failed'?`<a class="retry" href="${fallbackHref()}" target="_blank" rel="noopener noreferrer">سجّل درجتي الآن</a><p class="hint">يفتح نموذجًا مكتوبًا فيه اسمك ودرجتك. اضغط «إرسال» في آخره وتظهر لك «لقد تم تسجيل ردك».</p>`:''}
+   </div>`;
+  }
+ }
+ return html+`<div class="foot">منصة يَكُن، إعداد مستر محمود جمال، مدرس اللغة العربية. ${DATA.foot}</div>`;
+}
+
+function resultParams(){
+ const sc=finalScore();
+ const q=new URLSearchParams();
+ q.set(DATA.entry.name,st.name.trim());
+ q.set(DATA.entry.klass,st.klass.trim()||'-');
+ q.set(DATA.entry.score,`${toAr(sc.total)} من ${toAr(TOTAL+DATA.train.length)}`);
+ q.set(DATA.entry.time,`${toAr(Math.floor(st.finalTime/60))} د ${toAr(st.finalTime%60)} ث`);
+ q.set(DATA.entry.details,detailsText(sc.per));
+ return q;
+}
+function fallbackHref(){const q=resultParams();q.set('usp','pp_url');return `${DATA.viewUrl}?${q.toString()}`;}
+async function recordNow(){
+ st.send='sending';renderSend();
+ try{
+  const body=resultParams();body.set('submit','Submit');
+  await fetch(DATA.formUrl,{method:'POST',mode:'no-cors',body});
+  st.send='sent';
+ }catch(e){st.send='failed';}
+ renderSend();
+}
+function renderSend(){
+ const el=document.querySelector('.send');if(!el)return;
+ const box=el.parentElement;
+ el.className='send '+st.send;
+ el.textContent=
+   st.send==='sending'?'جاري تسجيل درجتك عند مستر محمود...':
+   st.send==='sent'?'✅ وصلت درجتك لمستر محمود تلقائيًا. راجع إجاباتك بالأسفل.':
+   st.send==='failed'?'سُلِّم امتحانك وحُسبت درجتك، لكن التسجيل التلقائي لم يكتمل. اضغط الزر بالأسفل وسيُسجَّل في ثوانٍ.':'';
+ if(st.send==='failed'&&!box.querySelector('.retry')){
+  box.insertAdjacentHTML('beforeend',`<a class="retry" href="${fallbackHref()}" target="_blank" rel="noopener noreferrer">سجّل درجتي الآن</a><p class="hint">يفتح نموذجًا مكتوبًا فيه اسمك ودرجتك. اضغط «إرسال» في آخره وتظهر لك «لقد تم تسجيل ردك».</p>`);
+ }
+}
+function tick(){
+ st.elapsed=Math.floor((Date.now()-st.start)/1000);
+ if(st.elapsed>=DATA.limit){st.elapsed=DATA.limit;finish(true);return;}
+ const remaining=Math.max(0,DATA.limit-st.elapsed);
+ const t=document.querySelector('.clock-time');
+ if(t){
+  t.textContent=`${toAr(String(Math.floor(remaining/60)).padStart(2,'0'))}:${toAr(String(remaining%60).padStart(2,'0'))}`;
+  const bar=document.querySelector('.clock-bar>span');if(bar)bar.style.width=Math.round(remaining/DATA.limit*100)+'%';
+  const clk=document.querySelector('.clock');if(clk)clk.classList.toggle('low',remaining<=300);
+ }
+}
+function finish(forced){
+ if(st.phase!=='exam')return;
+ if(forced!==true&&unanswered()>0&&!st.confirming){st.confirming=true;render();return;}
+ clearInterval(st.timerId);
+ if(forced===true)st.timedOut=true;
+ st.finalTime=Math.min(DATA.limit,Math.floor((Date.now()-st.start)/1000));
+ DATA.train.forEach((t,ti)=>{const el=document.getElementById('tr'+ti);st.trAnswers['tr'+ti]=el?el.value:'';});
+ st.phase='grading';render();window.scrollTo(0,0);
+ gradeEssays().then(()=>{st.phase='done';render();window.scrollTo(0,0);recordNow();});
+}
+function bind(){
+ const startBtn=document.getElementById('startBtn');
+ if(startBtn){
+  const qname=document.getElementById('qname'),qclass=document.getElementById('qclass');
+  const go=()=>{
+   st.name=qname.value;st.klass=qclass.value;
+   if(!st.name.trim()){document.getElementById('nameErr').style.display='block';return;}
+   st.phase='exam';st.start=Date.now();st.elapsed=0;
+   render();window.scrollTo(0,0);
+   st.timerId=setInterval(tick,1000);
+  };
+  startBtn.addEventListener('click',go);
+  [qname,qclass].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')go();}));
+ }
+ document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{
+  st.ans[b.dataset.k]=b.dataset.v==='true'?true:b.dataset.v==='false'?false:+b.dataset.v;
+  render();
+ }));
+ const sb=document.getElementById('submitBtn');
+ if(sb)sb.addEventListener('click',()=>finish(false));
+}
+function render(){
+ DATA.train.forEach((t,ti)=>{const el=document.getElementById('tr'+ti);if(el)st.trAnswers['tr'+ti]=el.value;});
+ document.getElementById('app').innerHTML=examPage();
+ bind();
+}
+render();
+</script>
+
+
+<script>
+(function(){
+ const c=document.getElementById('bg-stars');if(!c)return;const x=c.getContext('2d');
+ let W,H,P=[];
+ function rs(){W=c.width=innerWidth;H=c.height=innerHeight;P=[];const n=Math.min(36,Math.floor(W*H/45000));
+  for(let i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.4,s:Math.random()*.3+.05,o:Math.random()*.5+.2});}
+ rs();addEventListener('resize',rs);
+ (function loop(){x.clearRect(0,0,W,H);
+  P.forEach(p=>{p.y-=p.s;if(p.y<-2)p.y=H+2;x.globalAlpha=p.o;x.fillStyle='#e7c66a';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill();});
+  x.globalAlpha=1;requestAnimationFrame(loop);})();
+})();
+</script>
+
+</body>
+</html>

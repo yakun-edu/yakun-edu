@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يَكُن — منصة التعلّم الذكية</title>
+<meta name="description" content="منصة يَكُن: اختر مادتك، ادخل على مدرسك، وحل امتحانات تفاعلية بنتيجة فورية. اللغة العربية مع مستر محمود جمال متاحة الآن.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+<meta name="theme-color" content="#04060e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b3a6b'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23e7c66a' font-family='sans-serif' font-weight='bold'>ي</text></svg>">
+<style>
+:root{
+  --bg0:#04060e;--bg1:#0a1128;
+  --gold:#e7c66a;--gold2:#ffdf8e;--gold-d:#b8892b;
+  --cyan:#5ee7ff;--violet:#8b7bff;
+  --txt:#eef2ff;--txt2:#a3aecf;--txt3:#717ea3;
+  --brd:rgba(255,255,255,.09);
+  --green:#34d399;--red:#ff6b6b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',system-ui,sans-serif;color:var(--txt);line-height:1.7;min-height:100vh;
+  background:
+    radial-gradient(1200px 800px at 85% -10%,rgba(139,123,255,.13),transparent 60%),
+    radial-gradient(1000px 700px at 0% 110%,rgba(94,231,255,.08),transparent 55%),
+    linear-gradient(180deg,var(--bg0),var(--bg1) 60%,var(--bg0));
+  background-attachment:fixed}
+::selection{background:rgba(231,198,106,.3)}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:18px 14px 60px}
+a{color:inherit}
+#bg-stars{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.bg-orbs span{position:fixed;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.55}
+.o1{width:430px;height:430px;top:-130px;inset-inline-start:-110px;background:radial-gradient(circle,rgba(184,137,43,.42),transparent 65%);animation:o1 26s ease-in-out infinite}
+.o2{width:460px;height:460px;bottom:-160px;inset-inline-end:-130px;background:radial-gradient(circle,rgba(94,231,255,.30),transparent 65%);animation:o2 32s ease-in-out infinite}
+.o3{width:300px;height:300px;top:38%;inset-inline-start:30%;background:radial-gradient(circle,rgba(139,123,255,.26),transparent 65%);animation:o3 38s ease-in-out infinite}
+@keyframes o1{50%{transform:translate(70px,50px) scale(1.15)}}
+@keyframes o2{50%{transform:translate(-80px,-60px) scale(1.12)}}
+@keyframes o3{50%{transform:translate(-50px,70px) scale(.9)}}
+@keyframes yk-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes yk-glow{0%,100%{filter:drop-shadow(0 0 14px rgba(231,198,106,.35))}50%{filter:drop-shadow(0 0 32px rgba(231,198,106,.62))}}
+.rise{animation:yk-rise .6s ease both}
+.grid>.card{animation:yk-rise .6s ease both}
+.grid>.card:nth-child(2){animation-delay:.07s}
+.grid>.card:nth-child(3){animation-delay:.14s}
+.grid>.card:nth-child(4){animation-delay:.21s}
+.rows>.row{animation:yk-rise .55s ease both}
+.rows>.row:nth-child(2){animation-delay:.06s}
+.rows>.row:nth-child(3){animation-delay:.12s}
+.rows>.row:nth-child(4){animation-delay:.18s}
+.rows>.row:nth-child(5){animation-delay:.24s}
+.rows>.row:nth-child(6){animation-delay:.3s}
+
+/* hero */
+.hero{position:relative;border-radius:26px;overflow:hidden;text-align:center;padding:52px 22px 38px;margin-bottom:26px;
+  background:
+    radial-gradient(ellipse at 50% -20%,rgba(231,198,106,.22),transparent 60%),
+    radial-gradient(ellipse at 90% 110%,rgba(94,231,255,.14),transparent 55%),
+    linear-gradient(165deg,rgba(24,34,68,.82),rgba(8,12,28,.9));
+  border:1px solid rgba(231,198,106,.38);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 24px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.08),inset 0 0 80px rgba(231,198,106,.06)}
+.hero-logo{width:min(400px,84vw);margin:0 auto 12px;display:block;filter:drop-shadow(0 10px 34px rgba(139,92,246,.35))}
+.hero-mark{font-size:86px;font-weight:900;line-height:1.15;
+  background:linear-gradient(115deg,#fff7dd 10%,#ffd76a 45%,#c99a3a 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:yk-glow 3.4s ease-in-out infinite}
+.hero-tag{font-size:18px;font-weight:800;margin-top:4px;
+  background:linear-gradient(90deg,var(--gold2),var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin:14px auto 0;max-width:480px;font-size:15px;line-height:2;color:#c4cfeb}
+.hero-orn{display:block;margin-top:14px;color:rgba(231,198,106,.65);font-size:13px;letter-spacing:10px;text-shadow:0 0 12px rgba(231,198,106,.5)}
+
+/* section heads */
+.sec{margin:28px 0 14px}
+.sec-label{font-size:12.5px;font-weight:800;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--gold2),var(--gold-d));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-title{font-size:23px;font-weight:900;color:#f4f7ff;margin-top:2px;text-shadow:0 0 24px rgba(94,231,255,.12)}
+
+/* grids & cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid.one{grid-template-columns:1fr}
+.card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:18px 16px;border-radius:18px;min-height:130px;text-decoration:none;
+  background:linear-gradient(165deg,rgba(255,255,255,.075),rgba(255,255,255,.02));
+  border:1px solid var(--brd);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 12px 30px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.07);
+  transition:transform .16s ease-out,box-shadow .25s ease,border-color .25s ease;will-change:transform}
+a.card:hover{border-color:rgba(231,198,106,.55);box-shadow:0 22px 46px rgba(0,0,0,.55),0 0 28px rgba(231,198,106,.12),inset 0 1px 0 rgba(255,255,255,.1)}
+.card.soon{opacity:.55}
+.card-ico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;color:var(--gold2);
+  background:linear-gradient(140deg,rgba(231,198,106,.18),rgba(94,231,255,.06));
+  border:1px solid rgba(231,198,106,.35);box-shadow:0 0 18px rgba(231,198,106,.12),inset 0 1px 0 rgba(255,255,255,.08)}
+.card-name{font-size:16px;font-weight:800;color:#f4f7ff}
+.card-note{font-size:12.5px;line-height:1.8;color:var(--txt2)}
+.card-cta{margin-top:auto;font-size:13px;font-weight:800;color:var(--gold);text-shadow:0 0 14px rgba(231,198,106,.35)}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;color:var(--txt2);
+  background:rgba(255,255,255,.05);border:1px solid var(--brd)}
+.card.soon .badge{margin-top:auto}
+
+/* teacher row card */
+.tcard{flex-direction:row;align-items:center;gap:14px;min-height:0}
+.tcard .card-cta{margin:0;margin-inline-start:auto}
+.tbody{display:flex;flex-direction:column;gap:3px}
+
+.avatar{display:inline-flex;align-items:center;justify-content:center;flex:none;width:46px;height:46px;border-radius:50%;font-size:21px;font-weight:900;color:#231603;
+  background:linear-gradient(140deg,#ffe9ad,#c99a3a);box-shadow:0 6px 18px rgba(231,198,106,.35),inset 0 1px 0 rgba(255,255,255,.5)}
+.avatar.lg{width:60px;height:60px;font-size:27px}
+
+/* band */
+.band{display:flex;align-items:center;gap:14px;padding:22px 18px;margin-bottom:18px;border-radius:20px;
+  background:
+    radial-gradient(ellipse at 85% 0%,rgba(231,198,106,.18),transparent 60%),
+    linear-gradient(150deg,rgba(26,38,76,.85),rgba(9,13,30,.9));
+  border:1px solid rgba(231,198,106,.35);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 16px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
+.band.center{display:block;text-align:center}
+.band-title{font-size:25px;font-weight:900;
+  background:linear-gradient(115deg,#fff7dd,#ffd76a 55%,#c99a3a);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.band-sub{margin-top:6px;font-size:13.5px;line-height:1.9;color:#c0cbe8}
+
+/* rows */
+.rows{display:flex;flex-direction:column;gap:10px}
+.row{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;text-decoration:none;
+  background:linear-gradient(165deg,rgba(255,255,255,.065),rgba(255,255,255,.02));
+  border:1px solid var(--brd);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 8px 22px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.06);
+  transition:transform .16s ease-out,box-shadow .25s ease,border-color .25s ease;will-change:transform}
+a.row:hover{border-color:rgba(94,231,255,.5);box-shadow:0 16px 36px rgba(0,0,0,.5),0 0 24px rgba(94,231,255,.12)}
+.row-ico{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;color:var(--cyan);
+  background:rgba(94,231,255,.08);border:1px solid rgba(94,231,255,.3);box-shadow:0 0 16px rgba(94,231,255,.1)}
+.row-body{display:flex;flex-direction:column;gap:3px;min-width:0}
+.row-title{font-size:14.5px;font-weight:800;line-height:1.6;color:#f4f7ff}
+.row-meta{font-size:12px;color:var(--txt2);line-height:1.7}
+.row-cta{margin-inline-start:auto;flex:none;font-size:13px;font-weight:800;color:var(--gold);text-shadow:0 0 12px rgba(231,198,106,.35)}
+.row .badge{margin-inline-start:auto;flex:none}
+
+/* soon card */
+.sooncard{display:flex;gap:14px;align-items:center;padding:18px 16px;border-radius:18px;
+  border:1.5px dashed rgba(231,198,106,.4);background:rgba(231,198,106,.05);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.sooncard p{font-size:13.5px;line-height:1.9;color:var(--txt2)}
+.sooncard b{display:block;color:#f4f7ff;font-size:14.5px}
+
+/* features */
+.feats{display:flex;flex-direction:column;gap:10px}
+.feat{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:16px;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--brd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 8px 22px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06)}
+.feat p{font-size:13.5px;line-height:1.9;color:var(--txt2)}
+.feat b{display:block;color:#f4f7ff;font-size:14.5px}
+.feat-num{flex:none;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#c99a3a);box-shadow:0 0 16px rgba(231,198,106,.35)}
+
+/* back link */
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--gold2);text-decoration:none;margin-bottom:12px;padding:7px 13px;border-radius:10px;
+  background:rgba(231,198,106,.08);border:1px solid rgba(231,198,106,.3);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+/* footer */
+.foot{margin-top:34px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:12.5px;color:var(--txt3);text-align:center;line-height:2}
+
+/* ===== exam ===== */
+.exam-head{text-align:center;margin-bottom:16px}
+.exam-head h1{font-size:27px;font-weight:900;
+  background:linear-gradient(115deg,#fff7dd,#ffd76a 50%,#c99a3a);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.exam-head .fact{font-size:13px;color:var(--gold);font-weight:700;margin-top:4px}
+.exam-head .intro{font-size:14px;color:var(--txt2);line-height:2;margin:10px auto 0;max-width:560px}
+.exam-hero{border-radius:20px;overflow:hidden;margin:16px 0;border:1px solid rgba(231,198,106,.35);
+  box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 34px rgba(231,198,106,.12)}
+.exam-hero img{width:100%;display:block}
+.welcome{position:relative;text-align:center;padding:22px 18px 16px;margin:4px 0 18px;border-radius:20px;
+  border:1px solid rgba(231,198,106,.4);
+  background:linear-gradient(160deg,rgba(231,198,106,.12),rgba(94,231,255,.04));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 14px 34px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08)}
+.welcome-mark{display:block;font-size:34px;line-height:1;color:var(--gold);margin-bottom:4px;text-shadow:0 0 18px rgba(231,198,106,.6)}
+.welcome-text{font-size:19px;line-height:1.9;font-weight:800;color:#fdf6df}
+.welcome-sign{margin-top:8px;font-size:13px;color:var(--gold2);font-weight:700}
+
+.facts{border:1px solid var(--brd);border-radius:16px;overflow:hidden;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.fact-row{display:flex;gap:10px;padding:12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.fact-row:first-child{border-top:none}
+.fact-row b{flex:none;min-width:110px;font-size:13.5px;color:#ffe9ad}
+.fact-row span{font-size:13px;color:var(--txt2);line-height:1.9}
+.tip{margin-top:12px;padding:12px 14px;border-radius:14px;font-size:13.5px;line-height:1.9;
+  background:rgba(231,198,106,.08);border:1px solid rgba(231,198,106,.35);color:var(--txt2)}
+.tip b{color:var(--gold2)}
+
+.form{display:flex;flex-direction:column;gap:10px}
+.label{font-weight:700;font-size:14px;color:#e8edff}
+.input{font:inherit;padding:12px 14px;border:1px solid var(--brd);border-radius:12px;font-size:15px;min-height:48px;
+  background:rgba(6,10,24,.65);color:var(--txt);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.input::placeholder{color:var(--txt3)}
+.input:focus{outline:2px solid rgba(231,198,106,.7);outline-offset:1px;box-shadow:0 0 18px rgba(231,198,106,.2)}
+.err{color:var(--red);font-size:13px}
+.btn{font:inherit;font-weight:900;font-size:17px;padding:14px 18px;border:none;border-radius:14px;cursor:pointer;width:100%;min-height:52px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#d4a93f);box-shadow:0 10px 26px rgba(231,198,106,.3),inset 0 1px 0 rgba(255,255,255,.55);
+  transition:transform .15s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(231,198,106,.42),inset 0 1px 0 rgba(255,255,255,.55)}
+.btn:active{opacity:.85}
+.hint{color:var(--txt3);font-size:13px;margin-top:4px;line-height:1.9}
+
+.clock{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 12px;padding:12px 16px;border-radius:16px;margin-bottom:14px;
+  background:rgba(94,231,255,.06);border:1px solid rgba(94,231,255,.3);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.clock-label{font-size:13px;color:var(--txt2);font-weight:700}
+.clock-time{font-size:30px;font-weight:900;color:var(--cyan);font-variant-numeric:tabular-nums;line-height:1;text-shadow:0 0 18px rgba(94,231,255,.45)}
+.clock-bar{grid-column:1/-1;height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+.clock-bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold2));transition:width 1s linear}
+.clock.low{background:rgba(255,107,107,.08);border-color:rgba(255,107,107,.5)}
+.clock.low .clock-time{color:var(--red);text-shadow:0 0 18px rgba(255,107,107,.5)}
+.clock.low .clock-bar>span{background:var(--red)}
+.progress{height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden;margin:8px 0 14px}
+.progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--gold2),var(--cyan));transition:width .25s}
+.who{font-size:13px;font-weight:800;color:var(--gold2);margin-bottom:6px}
+
+.q{border-radius:16px;padding:14px;margin:0 0 12px;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--brd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 10px 26px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06)}
+.q-stem{font-weight:800;font-size:16px;margin:0 0 10px;line-height:1.9;color:#f4f7ff}
+.q-num{display:inline-flex;min-width:26px;height:26px;line-height:26px;text-align:center;align-items:center;justify-content:center;border-radius:50%;font-size:14px;margin-inline-end:6px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#c99a3a);box-shadow:0 0 14px rgba(231,198,106,.35)}
+.choices{display:flex;flex-direction:column;gap:6px}
+.choice{font:inherit;display:flex;align-items:center;gap:10px;text-align:start;padding:12px 14px;border-radius:12px;font-size:14px;cursor:pointer;line-height:1.7;min-height:48px;
+  background:rgba(6,10,24,.5);border:1px solid var(--brd);color:var(--txt);transition:border-color .15s,background .15s,box-shadow .2s}
+.choice:not(:disabled):hover{border-color:rgba(94,231,255,.5)}
+.choice:disabled{cursor:default}
+.letter{flex:none;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--gold2);background:rgba(231,198,106,.1);border:1px solid rgba(231,198,106,.25)}
+.choice.picked{border-color:var(--gold);background:rgba(231,198,106,.12);font-weight:700;box-shadow:0 0 18px rgba(231,198,106,.18)}
+.choice.picked .letter{background:linear-gradient(135deg,#ffe9ad,#c99a3a);color:#231603;border-color:transparent}
+.choice.correct{border-color:var(--green);background:rgba(52,211,153,.1);font-weight:700}
+.choice.correct .letter{background:var(--green);color:#06130d;border-color:transparent}
+.choice.wrong{border-color:var(--red);background:rgba(255,107,107,.08)}
+.choice.wrong .letter{background:var(--red);color:#170608;border-color:transparent}
+.q-answer{font-size:13px;color:#9fe8c0;font-weight:700;margin:8px 0 0}
+.qsec{font-size:19px;font-weight:900;margin:20px 0 4px;
+  background:linear-gradient(90deg,#fff7dd,#ffd76a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.qsec-label{font-size:12.5px;color:var(--gold);font-weight:700;margin-bottom:10px}
+
+.result{text-align:center;padding:22px 14px;border-radius:20px;border:1px solid var(--brd);
+  background:linear-gradient(165deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 16px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
+.score{font-size:56px;font-weight:900;margin:0;
+  background:linear-gradient(115deg,#fff7dd,#ffd76a 50%,#c99a3a);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 24px rgba(231,198,106,.4))}
+.score-of{font-size:18px;color:var(--txt2);font-weight:400}
+.score-note{font-size:15.5px;margin:6px 0 12px;font-weight:700;color:#f4f7ff}
+.breakdown{list-style:none;margin:0 0 12px;font-size:14px;color:var(--txt2);display:flex;flex-direction:column;gap:6px}
+.breakdown li{padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--brd)}
+.send{margin:10px 0;font-size:14px;font-weight:700;padding:10px 14px;border-radius:10px}
+.send.sending{background:rgba(231,198,106,.12);color:var(--gold2)}
+.send.sent{background:rgba(52,211,153,.12);color:var(--green)}
+.send.failed{background:rgba(255,107,107,.1);color:var(--red)}
+.retry{display:inline-block;font-weight:900;font-size:16px;padding:12px 22px;border-radius:12px;text-decoration:none;margin-top:6px;color:#231603;
+  background:linear-gradient(135deg,#ffe9ad,#d4a93f);box-shadow:0 8px 22px rgba(231,198,106,.3)}
+.timer-done{font-size:14px;color:var(--txt2);text-align:center;margin-bottom:14px}
+@media (max-width:480px){.hero-mark{font-size:66px}.grid{gap:10px}}
+@media (prefers-reduced-motion:reduce){.o1,.o2,.o3,.hero-mark{animation:none}.rise,.grid>.card,.rows>.row{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<canvas id="bg-stars" aria-hidden="true"></canvas>
+<div class="bg-orbs" aria-hidden="true"><span class="o1"></span><span class="o2"></span><span class="o3"></span></div>
+
+<script>
+/* ================= بيانات المنصة ================= */
+const SUBJECTS=[
+ {id:'arabic',name:'اللغة العربية',note:'قراءة، نحو، إملاء، وتعبير',icon:'book',active:true},
+ {id:'math',name:'الرياضيات',note:'قريبًا على يَكُن',icon:'math',active:false},
+ {id:'science',name:'العلوم',note:'قريبًا على يَكُن',icon:'science',active:false},
+ {id:'english',name:'اللغة الإنجليزية',note:'قريبًا على يَكُن',icon:'globe',active:false},
+];
+const TEACHER={name:'مستر محمود جمال',role:'مدرس اللغة العربية',bio:'للمراحل الابتدائية والإعدادية والثانوية. امتحانات تفاعلية بنتيجة فورية، وملازم مراجعة جاهزة للطباعة.'};
+const EXAMS=[{title:'اختبار شهر نوفمبر (مراجعة)',grade:'الصف الرابع الابتدائي',meta:'١٦ سؤالًا بدرجة فورية + تدريب مقالي، المدة ٤٥ دقيقة',path:'exam4.html'},{title:'اختبار شهر نوفمبر (مراجعة الوحدة الثالثة)',grade:'الصف الخامس الابتدائي',meta:'٢٣ سؤالًا بدرجة فورية + تدريب مقالي، المدة ٤٥ دقيقة',path:'exam5.html'},{title:'امتحان الوحدة الأولى «أنا مصري»',grade:'الصف الأول الإعدادي',meta:'٢٧ سؤالًا بدرجة فورية + تدريب مقالي، المدة ساعتان',path:'exam-1prep.html'},{title:'اختبار شهر نوفمبر (مراجعة)',grade:'الصف الثاني الإعدادي',meta:'النحو، ٢٠ سؤالًا، مدته ساعة، والنتيجة فورية',path:'#/exam'},{title:'نموذج الفصل الدراسي الأول',grade:'الصف الثاني الإعدادي',meta:'١٣ سؤالًا بدرجة فورية + تدريب مقالي، المدة ساعتان',path:'exam-2prep-model.html'},{title:'نموذج الفصل الدراسي الأول',grade:'الصف الثاني الإعدادي',meta:'١٣ سؤالًا بدرجة فورية + تدريب مقالي، المدة ساعتان',path:'exam-2prep-model.html'},{title:'نموذج الفصل الدراسي الأول',grade:'الصف الثاني الإعدادي',meta:'١٣ سؤالًا بدرجة فورية + تدريب مقالي، المدة ساعتان',path:'exam-2prep-model.html'},{title:'نموذج امتحان شهر نوفمبر',grade:'الصف الثالث الإعدادي',meta:'١٨ سؤالًا بدرجة فورية + تدريب مقالي، المدة ساعتان',path:'exam-3prep.html'}];
+const BOOKLETS=[
+ {title:'المراجعة النهائية، النسخة الكاملة',grade:'الصف الخامس الابتدائي',meta:'الوحدات الثلاث كاملة، ٩٨ صفحة',url:''},
+ {title:'المراجعة النهائية، النسخة الخفيفة',grade:'الصف الخامس الابتدائي',meta:'أسئلة فقط، ١٢ صفحة',url:''},
+ {title:'مراجعة الدروس والنحو',grade:'الصف الخامس الابتدائي',meta:'ملخص الدروس بجداول المفردات، ٢٥ صفحة',url:''},
+ {title:'مراجعة اللغة العربية',grade:'الصف الرابع الابتدائي',meta:'مراجعة شاملة',url:''},
+ {title:'بنك أسئلة اللغة العربية',grade:'الصف الرابع الابتدائي',meta:'أسئلة متنوعة على المنهج',url:''},
+];
+
+/* ================= بنك أسئلة الامتحان (الإجابة الصحيحة أول اختيار، وتُخلط عند العرض) ================= */
+const EXAM=[
+ {title:'المعرب والمبني من الأسماء والحروف والأفعال',short:'المعرب والمبني',qs:[
+  ['في جملة «هؤلاءِ الذين اجتهدوا ناجحون» الكلمات المبنية هي:',['هؤلاءِ، الذين، اجتهدوا','هؤلاءِ، الذين، ناجحون','الذين، اجتهدوا، ناجحون','هؤلاءِ، الذين فقط']],
+  ['أي الجمل الآتية وردت فيها صيغة فعل مضارع مبني؟',['واللهِ ليكتبَنَّ التلميذُ واجبَه','لن يكتبَ التلميذُ واجبَه','لم يكتبِ التلميذُ واجبَه','التلميذُ يكتبُ واجبَه']],
+  ['الفعل «يكتبْنَ» في جملة «الطالباتُ يكتبْنَ الدرسَ» مبني على:',['السكون لاتصاله بنون النسوة','الفتح لاتصاله بنون النسوة','السكون لأنه مجزوم','ثبوت النون لأنه من الأفعال الخمسة']],
+  ['الحروف في اللغة العربية كلها:',['مبنية','معربة','بعضها معرب وبعضها مبني','مرفوعة']],
+  ['الفعل الأمر «اجتهدوا» في جملة «اجتهدوا تنجحوا» مبني على:',['حذف النون','السكون','الفتح','الضم']],
+  ['الاسم الذي يبقى آخره على حالة واحدة في كل الجمل يسمى:',['مبنيًّا','معربًا','مرفوعًا','مجزومًا']],
+  ['في جملة «هؤلاءِ هم الطلابُ» الكلمة المعربة هي:',['الطلابُ','هؤلاءِ','هم']],
+ ]},
+ {title:'الضمائر البارزة والمستترة',short:'الضمائر',qs:[
+  ['من الأسماء المبنية:',['هؤلاءِ','المعلمون','الطالباتُ','الكتابُ']],
+  ['الضمير «نحن» ضمير:',['متكلم','مخاطب','غائب','مستتر']],
+  ['في جملة «الطالبتان ذاكرتا دروسهما» الفاعل في الفعل «ذاكرتا» هو:',['ألف الاثنين ضمير متصل في محل رفع','تاء التأنيث ضمير متصل','ضمير مستتر','ضمير منفصل بارز']],
+  ['الضميران المتصلان «التاء» و«الكاف» في الفعل «أكرمتُكَ» على الترتيب في محل:',['رفع فاعل، ونصب مفعول به','نصب مفعول به، ورفع فاعل','رفع فاعل، وجر مضاف إليه','رفع مبتدأ، ونصب مفعول به']],
+  ['في جملة «سعادُ تذاكرُ دروسَها» أي العبارات الآتية صحيحة؟',['في الجملة ضمير مستتر وضمير بارز متصل','في الجملة ضميران مستتران فقط','في الجملة ضميران بارزان منفصلان','لا يوجد ضمير في الجملة']],
+  ['أي الجمل الآتية فيها ضمير منفصل؟',['أنتَ مجتهدٌ','كتابُكَ جديدٌ','ذاكرتُ دروسي','ذاكرَ دروسَه']],
+ ]},
+ {title:'أسلوب الشرط: الأدوات الجازمة وغير الجازمة',short:'أسلوب الشرط',qs:[
+  ['في جملة «من يتقِ اللهَ يجعلْ له مخرجًا» أداة الشرط وفعل الشرط وجوابه على الترتيب:',['من، يتقِ، يجعلْ','يتقِ، من، يجعلْ','من، يجعلْ، يتقِ','اللهَ، يتقِ، يجعلْ']],
+  ['أي الجمل الشرطية الآتية أداتها تدل على غير العاقل؟',['ما تفعلْ من خيرٍ تجدْه','من يجتهدْ ينجحْ','متى تحضرْ نرحبْ بك','أينما تجلسْ أجلسْ']],
+  ['أي الجمل الآتية صحيحة لغويًا؟',['إن تجتهدوا تنجحوا','إن تجتهدونَ تنجحونَ','إن تجتهدوا تنجحونَ','إن تجتهدُ تنجحُ']],
+  ['في أي الجمل الآتية وردت أداة شرط غير جازمة؟',['إذا تأخرَ المطرُ ضاقَ الناسُ','متى تتأخرْ يضقْ بك الناسُ','مهما تتأخرْ تضقْ','أينما تذهبْ تجدْ']],
+  ['أي الأدوات الآتية أداة شرط جازمة؟',['مهما','إذا','لو','كلما']],
+  ['أكمل بما يناسب: «مهما ........ الطالبُ من جهدٍ ........ ثمرتَه»:',['يبذلْ، يجدْ','يبذلُ، يجدُ','يبذلَ، يجدَ','يبذلْ، يجدُ']],
+  ['علامة جزم الفعلين «تدعُ» و«تلقَ» في جملة «إن تدعُ إلى الخير تلقَ جزاءَه»:',['حذف حرف العلة فيهما','السكون فيهما','الفتحة فيهما','حذف النون فيهما']],
+ ]},
+];
+const FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSdmAqm1n2b8TxTq5MkO4f7qPOo8AC6oY6fppts-AHg0uyir5g/formResponse';
+const VIEW_URL=FORM_URL.replace('/formResponse','/viewform');
+const ENTRY={name:'entry.1765923831',klass:'entry.1632060233',score:'entry.1993704302',time:'entry.436783136',details:'entry.1838141593'};
+const LIMIT=3600;
+
+/* ================= أدوات ================= */
+const AR='٠١٢٣٤٥٦٧٨٩';
+const toAr=n=>String(n).replace(/[0-9]/g,d=>AR[+d]);
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function shuffleQ([stem,choices]){
+  const idx=choices.map((_,i)=>i);
+  for(let i=idx.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]];}
+  return {stem,choices:idx.map(i=>choices[i]),answer:idx.indexOf(0)};
+}
+const SECTIONS=EXAM.map(s=>({...s,qs:s.qs.map(shuffleQ)}));
+const TOTAL=SECTIONS.reduce((n,s)=>n+s.qs.length,0);
+
+const ICONS={
+ book:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/><path d="M9 8h7"/>',
+ math:'<path d="M18 4H6l6 8-6 8h12"/>',
+ science:'<path d="M9 3h6"/><path d="M10 3v6L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9V3"/><path d="M7.5 15h9"/>',
+ globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.9 5.7 3.9 9s-1.4 6.4-3.9 9c-2.5-2.6-3.9-5.7-3.9-9s1.4-6.4 3.9-9z"/>',
+ video:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>',
+ file:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>',
+ exam:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+ back:'<path d="M5 12h14"/><path d="M12 5l7 7-7 7"/>',
+};
+const icon=(k,s=26)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`;
+
+/* ================= الصفحات ================= */
+function homePage(){
+ return `
+ <div class="hero rise">
+   <img class="hero-logo" src="logo-horizontal.png" alt="يَكُن — منصة مستر محمود، امتحانات أونلاين بدرجة فورية">
+   <p class="hero-mark" style="position:absolute;left:-9999px">يَكُن</p>
+   <p class="hero-tag">منصة التعلّم الذكية</p>
+   <p class="hero-sub">تعلّم، امتحن، اتفوق. اختر مادتك، ادخل على مدرسك، وحل امتحانات تفاعلية بنتيجة فورية.</p>
+   <span class="hero-orn" aria-hidden="true">۞ ۞ ۞</span>
+ </div>
+ <div class="sec rise" style="animation-delay:.08s"><p class="sec-label">المواد الدراسية</p><h2 class="sec-title">اختر مادتك</h2></div>
+ <div class="grid">
+  ${SUBJECTS.map((s,i)=>s.active
+   ?`<a class="card rise" style="animation-delay:${.12+i*.07}s" href="#/arabic">
+       <span class="card-ico">${icon(s.icon)}</span>
+       <span class="card-name">${s.name}</span>
+       <span class="card-note">${s.note}</span>
+       <span class="card-cta">ادخل المادة ←</span></a>`
+   :`<div class="card soon rise" style="animation-delay:${.12+i*.07}s">
+       <span class="card-ico">${icon(s.icon)}</span>
+       <span class="card-name">${s.name}</span>
+       <span class="card-note">${s.note}</span>
+       <span class="badge">قريبًا</span></div>`).join('')}
+ </div>
+ <div class="sec rise" style="animation-delay:.3s"><p class="sec-label">لماذا يَكُن؟</p><h2 class="sec-title">منصة تشتغل معاك</h2></div>
+ <div class="feats">
+  ${[['١','امتحانات تفاعلية','تجاوب من موبايلك وتشوف درجتك في نفس اللحظة، وغلطك يتصححلك.'],
+     ['٢','نتيجتك توصل للمدرس','اسمك ودرجتك بيسجلوا عند مدرسك تلقائيًا أول ما تسلّم.'],
+     ['٣','ملازم للتحميل','مراجعات مرتبة وجاهزة للطباعة قبل الامتحان.']]
+    .map((f,i)=>`<div class="feat rise" style="animation-delay:${.34+i*.07}s"><span class="feat-num">${f[0]}</span><p><b>${f[1]}</b>${f[2]}</p></div>`).join('')}
+ </div>
+ <div class="foot">منصة يَكُن، نسختها الأولى. اللغة العربية متاحة الآن، وباقي المواد في الطريق.</div>`;
+}
+
+function subjectPage(){
+ return `
+ <a class="back" href="#/">${icon('back',16)} الرئيسية</a>
+ <div class="band center rise">
+   <p class="band-title">اللغة العربية</p>
+   <p class="band-sub">اختر مدرسك وادخل على امتحاناته وفيديوهاته وملازمه</p>
+ </div>
+ <div class="sec rise" style="animation-delay:.08s"><p class="sec-label">المدرسون</p></div>
+ <div class="grid one">
+   <a class="card tcard rise" style="animation-delay:.12s" href="#/teacher">
+     <span class="avatar" aria-hidden="true">م</span>
+     <span class="tbody"><span class="card-name">${TEACHER.name}</span><span class="card-note">${TEACHER.role}</span></span>
+     <span class="card-cta">ادخل ←</span></a>
+ </div>
+ <div class="foot">منصة يَكُن، مادة اللغة العربية.</div>`;
+}
+
+function teacherPage(){
+ return `
+ <a class="back" href="#/arabic">${icon('back',16)} اللغة العربية</a>
+ <div class="band rise">
+   <img src="logo-square.png" alt="شعار يَكُن" style="width:52px;height:52px;border-radius:14px;box-shadow:0 4px 18px rgba(34,211,238,.25)">
+   <div><p class="band-title">${TEACHER.name}</p><p class="band-sub">${TEACHER.role}، ${TEACHER.bio}</p></div>
+ </div>
+ <div class="sec rise" style="animation-delay:.08s"><p class="sec-label">${toAr(EXAMS.length)} متاح</p><h2 class="sec-title">الامتحانات</h2></div>
+ <div class="rows">
+  ${EXAMS.map(e=>`<a class="row rise" style="animation-delay:.12s" href="${e.path}">
+     <span class="row-ico">${icon('exam')}</span>
+     <span class="row-body"><span class="row-title">${e.title}</span><span class="row-meta">${e.grade}، ${e.meta}</span></span>
+     <span class="row-cta">ابدأ ←</span></a>`).join('')}
+ </div>
+ <div class="sec rise" style="animation-delay:.16s"><p class="sec-label">قريبًا</p><h2 class="sec-title">الفيديوهات والشرح</h2></div>
+ <div class="sooncard rise" style="animation-delay:.2s">
+   <span class="row-ico">${icon('video')}</span>
+   <p><b>دروس فيديو مسجلة</b>قسم الفيديوهات جاهز، والمحتوى في الطريق إليكم قريبًا.</p>
+ </div>
+ <div class="sec rise" style="animation-delay:.24s"><p class="sec-label">للتحميل والطباعة</p><h2 class="sec-title">الملازم والمراجعات</h2></div>
+ <div class="rows">
+  ${BOOKLETS.map((b,i)=>`<div class="row rise" style="animation-delay:${.28+i*.05}s">
+     <span class="row-ico">${icon('file')}</span>
+     <span class="row-body"><span class="row-title">${b.title}</span><span class="row-meta">${b.grade}، ${b.meta}</span></span>
+     ${b.url?`<a class="retry" href="${b.url}" target="_blank" rel="noopener noreferrer">تحميل</a>`:`<span class="badge">قريبًا</span>`}
+   </div>`).join('')}
+ </div>
+ <div class="foot">صفحة ${TEACHER.name} على منصة يَكُن. تُحدَّث الأقسام أولًا بأول.</div>`;
+}
+
+/* ================= الامتحان ================= */
+const st={phase:'intro',name:'',klass:'',ans:SECTIONS.map(s=>s.qs.map(()=>null)),start:0,elapsed:0,finalTime:0,confirming:false,timedOut:false,send:'idle',timerId:null};
+const answered=()=>st.ans.reduce((n,row)=>n+row.filter(a=>a!==null).length,0);
+const unanswered=()=>TOTAL-answered();
+const scores=()=>{const per=SECTIONS.map((s,i)=>s.qs.reduce((n,q,j)=>n+(st.ans[i][j]===q.answer?1:0),0));return{per,total:per.reduce((a,b)=>a+b,0)};};
+const detailsText=per=>SECTIONS.map((s,i)=>`${s.short} ${toAr(per[i])}/${toAr(s.qs.length)}`).join(' - ');
+const encourage=t=>t>=17?'🌟 ممتاز! نتيجة تشرّف، مستر محمود هيفتخر بيك':t>=14?'🎉 جيد جدًا! راجع أخطاءك بالأسفل وهتبقى من الأوائل':t>=10?'💪 ناجح! راجع أخطاءك وحاول تاني، هتطلع أحسن':'📖 محتاج تراجع الدروس كويس وتعيد المحاولة، إنت تقدر';
+
+const LESSON_FACTS=[
+ ['المعرب والمبني','المعرب يتغير آخره بتغير موقعه في الجملة، والمبني يلزم حالة واحدة. الحروف كلها مبنية، والماضي والأمر مبنيان، والمضارع معرب إلا مع نون التوكيد أو نون النسوة'],
+ ['من الأسماء المبنية','الضمائر، وأسماء الإشارة، والأسماء الموصولة، وأسماء الاستفهام'],
+ ['الضمائر','البارز يُلفظ ويُكتب مثل أنا وهو والتاء والكاف، والمستتر لا يظهر في الكلام ويُقدَّر مثل هو وهي وأنا وأنتَ'],
+ ['أسلوب الشرط','الجازمة: إن، من، ما، مهما، متى، أين، وتجزم فعل الشرط وجوابه. وغير الجازمة: إذا، لو، كلما'],
+];
+
+function examPage(){
+ const graded=st.phase==='done';
+ let html=`
+ <a class="back" href="#/teacher">العودة لصفحة مستر محمود ←</a>
+ <div class="exam-head rise">
+   <h1>اختبار شهر نوفمبر (مراجعة)</h1>
+   <p class="fact">منصة يَكُن، الصف الثاني الإعدادي، النحو، ٢٠ سؤالًا، مدته ساعة</p>
+   <p class="intro">امتحان تفاعلي على منصة يَكُن: المعرب والمبني، والضمائر البارزة والمستترة، وأسلوب الشرط. اكتب اسمك، وأجب خلال ساعة واحدة، وستظهر درجتك فورًا مع الإجابات الصحيحة، وتصل عند مستر محمود جمال تلقائيًا.</p>
+ </div>
+ <div class="exam-hero rise"><img loading="lazy" decoding="async" src="hero.jpg" alt="كتاب مفتوح وقلم ودواة نحاسية وزخارف إسلامية ذهبية على خلفية كحلية"></div>`;
+
+ if(st.phase==='intro'){
+  html+=`
+  <div class="welcome rise" role="note">
+    <span class="welcome-mark" aria-hidden="true">❝</span>
+    <p class="welcome-text">قبل ما تبدأ الامتحان، مستر محمود بيفكرك: متحلش بطريقة حمادة</p>
+    <p class="welcome-sign">مستر محمود جمال</p>
+  </div>
+  <div class="sec rise"><p class="sec-label">قبل أن تبدأ</p><h2 class="sec-title">ملخص سريع للدروس</h2></div>
+  <div class="facts rise">${LESSON_FACTS.map(f=>`<div class="fact-row"><b>${f[0]}</b><span>${f[1]}</span></div>`).join('')}</div>
+  <div class="tip rise"><b>قبل أن تبدأ: </b>اقرأ كل سؤال بتركيز، واختر إجابة واحدة، ولا تترك سؤالًا بلا إجابة. تُحسب لك درجة واحدة لكل إجابة صحيحة.</div>
+  <div class="sec rise"><p class="sec-label">بياناتك</p></div>
+  <div class="form rise">
+    <label class="label" for="qname">اسمك الثلاثي</label>
+    <input id="qname" class="input" type="text" placeholder="مثال: أحمد محمد علي" value="${esc(st.name)}">
+    <label class="label" for="qclass">الفصل (اختياري)</label>
+    <input id="qclass" class="input" type="text" placeholder="مثال: ٢/١" value="${esc(st.klass)}">
+    <p class="err" id="nameErr" role="alert" style="display:none">اكتب اسمك الأول حتى تُسجَّل درجتك باسمك</p>
+    <button type="button" class="btn" id="startBtn">ابدأ الامتحان ←</button>
+    <p class="hint">٢٠ سؤالًا، درجة لكل سؤال، ومدة الامتحان ساعة واحدة. يبدأ العداد حين تضغط «ابدأ الامتحان»، ويُسلَّم الامتحان تلقائيًا عند انتهاء الساعة حتى لو لم تنتهِ.</p>
+  </div>`;
+ } else {
+  const remaining=Math.max(0,LIMIT-st.elapsed);
+  const ttxt=`${toAr(String(Math.floor(remaining/60)).padStart(2,'0'))}:${toAr(String(remaining%60).padStart(2,'0'))}`;
+  html+=`<p class="who">الطالب: ${esc(st.name)}${st.klass?`، الفصل: ${esc(st.klass)}`:''}</p>`;
+  if(st.phase==='exam'){
+   html+=`<div class="clock ${remaining<=300?'low':''}" role="timer"><span class="clock-label">الوقت المتبقي</span><span class="clock-time">${ttxt}</span><span class="clock-bar"><span style="width:${Math.round(remaining/LIMIT*100)}%"></span></span></div>
+   <div class="progress" aria-label="التقدم"><span style="width:${Math.round(answered()/TOTAL*100)}%"></span></div>`;
+  } else {
+   html+=`<p class="timer-done">${st.timedOut?'انتهى الوقت وسُلِّم امتحانك تلقائيًا.':`أنهيت الامتحان في ${toAr(Math.floor(st.finalTime/60))} دقيقة و${toAr(st.finalTime%60)} ثانية`}</p>`;
+  }
+  let n=0;
+  SECTIONS.forEach((sec,si)=>{
+   html+=`<p class="qsec">${['الأول','الثاني','الثالث'][si]}: ${sec.title}</p><p class="qsec-label">${toAr(sec.qs.length)} أسئلة</p>`;
+   sec.qs.forEach((q,qi)=>{
+    n++;
+    const picked=st.ans[si][qi];
+    html+=`<div class="q"><p class="q-stem"><span class="q-num">${toAr(n)}</span> ${q.stem}</p><div class="choices" role="radiogroup">`;
+    q.choices.forEach((c,ci)=>{
+     const cls=graded?(ci===q.answer?'correct':ci===picked?'wrong':''):(ci===picked?'picked':'');
+     html+=`<button type="button" class="choice ${cls}" data-s="${si}" data-q="${qi}" data-c="${ci}" ${graded?'disabled':''}><span class="letter">${['أ','ب','ج','د'][ci]}</span><span>${c}</span></button>`;
+    });
+    html+=`</div>${graded&&picked!==q.answer?`<p class="q-answer">الإجابة الصحيحة: ${q.choices[q.answer]}</p>`:''}</div>`;
+   });
+  });
+  if(st.phase==='exam'){
+   html+=`<div class="sec"><h2 class="sec-title">التسليم</h2></div>`;
+   if(st.confirming&&unanswered()>0) html+=`<div class="tip" style="background:rgba(179,57,47,.08);border-color:rgba(179,57,47,.35)"><b style="color:var(--red)">عندك أسئلة من غير إجابة: </b>تركت ${toAr(unanswered())} ${unanswered()===1?'سؤالًا':unanswered()===2?'سؤالين':unanswered()<=10?'أسئلة':'سؤالًا'} بلا إجابة وستحسب خطأ. اضغط «تأكيد التسليم» لو تريد التسليم الآن.</div>`;
+   html+=`<button type="button" class="btn" id="submitBtn" style="margin-top:10px">${st.confirming&&unanswered()>0?'تأكيد التسليم':'تسليم الإجابات'}</button>`;
+  } else {
+   const sc=scores();
+   html+=`<div class="sec"><h2 class="sec-title">النتيجة</h2></div>
+   <div class="result">
+     <p class="score">${sc.total} <span class="score-of">من ${toAr(TOTAL)}</span></p>
+     <p class="score-note">${encourage(sc.total)}</p>
+     <ul class="breakdown">${SECTIONS.map((sec,i)=>`<li>${sec.short}: ${toAr(sc.per[i])} من ${toAr(sec.qs.length)}</li>`).join('')}</ul>
+     <p class="send ${st.send}" role="status">${
+       st.send==='sending'?'جاري تسجيل درجتك عند مستر محمود...':
+       st.send==='sent'?'✅ وصلت درجتك لمستر محمود تلقائيًا. راجع إجاباتك بالأسفل.':
+       st.send==='failed'?'سُلِّم امتحانك وحُسبت درجتك، لكن التسجيل التلقائي لم يكتمل. اضغط الزر بالأسفل وسيُسجَّل في ثوانٍ.':''}</p>
+     ${st.send==='failed'?`<a class="retry" href="${fallbackHref()}" target="_blank" rel="noopener noreferrer">سجّل درجتي الآن</a><p class="hint">يفتح نموذجًا مكتوبًا فيه اسمك ودرجتك. اضغط «إرسال» في آخره وتظهر لك «لقد تم تسجيل ردك».</p>`:''}
+   </div>`;
+  }
+ }
+ return html+`<div class="foot">منصة يَكُن، إعداد مستر محمود جمال، مدرس اللغة العربية. أُعد وفق منهج الصف الثاني الإعدادي، النحو، ومراجعة شهر نوفمبر ٢٠٢٦.</div>`;
+}
+
+function resultParams(){
+ const sc=scores();
+ const q=new URLSearchParams();
+ q.set(ENTRY.name,st.name.trim());
+ q.set(ENTRY.klass,st.klass.trim()||'-');
+ q.set(ENTRY.score,`${toAr(sc.total)} من ${toAr(TOTAL)}`);
+ q.set(ENTRY.time,`${toAr(Math.floor(st.finalTime/60))} د ${toAr(st.finalTime%60)} ث`);
+ q.set(ENTRY.details,detailsText(sc.per));
+ return q;
+}
+function fallbackHref(){const q=resultParams();q.set('usp','pp_url');return `${VIEW_URL}?${q.toString()}`;}
+
+async function recordNow(){
+ st.send='sending'; renderSend();
+ try{
+  const body=resultParams();body.set('submit','Submit');
+  await fetch(FORM_URL,{method:'POST',mode:'no-cors',body});
+  st.send='sent';
+ }catch(e){st.send='failed';}
+ renderSend();
+}
+function renderSend(){
+ const el=document.querySelector('.send');if(!el)return;
+ const box=el.parentElement;
+ const sc=scores();
+ box.querySelector('.send').className='send '+st.send;
+ box.querySelector('.send').textContent=
+   st.send==='sending'?'جاري تسجيل درجتك عند مستر محمود...':
+   st.send==='sent'?'✅ وصلت درجتك لمستر محمود تلقائيًا. راجع إجاباتك بالأسفل.':
+   st.send==='failed'?'سُلِّم امتحانك وحُسبت درجتك، لكن التسجيل التلقائي لم يكتمل. اضغط الزر بالأسفل وسيُسجَّل في ثوانٍ.':'';
+ if(st.send==='failed'&&!box.querySelector('.retry')){
+  box.insertAdjacentHTML('beforeend',`<a class="retry" href="${fallbackHref()}" target="_blank" rel="noopener noreferrer">سجّل درجتي الآن</a><p class="hint">يفتح نموذجًا مكتوبًا فيه اسمك ودرجتك. اضغط «إرسال» في آخره وتظهر لك «لقد تم تسجيل ردك».</p>`);
+ }
+}
+
+function tick(){
+ st.elapsed=Math.floor((Date.now()-st.start)/1000);
+ if(st.elapsed>=LIMIT){st.elapsed=LIMIT;finish(true);return;}
+ const t=document.querySelector('.clock-time');
+ if(t){
+  const remaining=Math.max(0,LIMIT-st.elapsed);
+  t.textContent=`${toAr(String(Math.floor(remaining/60)).padStart(2,'0'))}:${toAr(String(remaining%60).padStart(2,'0'))}`;
+  const bar=document.querySelector('.clock-bar>span');if(bar)bar.style.width=Math.round(remaining/LIMIT*100)+'%';
+  const clk=document.querySelector('.clock');if(clk)clk.classList.toggle('low',remaining<=300);
+ }
+}
+
+function finish(forced){
+ if(st.phase!=='exam')return;
+ if(forced!==true&&unanswered()>0&&!st.confirming){st.confirming=true;render();return;}
+ clearInterval(st.timerId);
+ if(forced===true)st.timedOut=true;
+ st.finalTime=Math.min(LIMIT,Math.floor((Date.now()-st.start)/1000));
+ st.phase='done';
+ render();
+ window.scrollTo(0,0);
+ recordNow();
+}
+
+function bindExam(){
+ const startBtn=document.getElementById('startBtn');
+ if(startBtn){
+  const qname=document.getElementById('qname'),qclass=document.getElementById('qclass');
+  const go=()=>{
+   st.name=qname.value;st.klass=qclass.value;
+   if(!st.name.trim()){document.getElementById('nameErr').style.display='block';return;}
+   st.phase='exam';st.start=Date.now();st.elapsed=0;
+   render();window.scrollTo(0,0);
+   st.timerId=setInterval(tick,1000);
+  };
+  startBtn.addEventListener('click',go);
+  [qname,qclass].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')go();}));
+ }
+ document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{
+  st.ans[+b.dataset.s][+b.dataset.q]=+b.dataset.c;
+  st.confirming=false;
+  const y=window.scrollY;render();window.scrollTo(0,y);
+ }));
+ const submitBtn=document.getElementById('submitBtn');
+ if(submitBtn)submitBtn.addEventListener('click',()=>finish());
+}
+
+/* ================= الراوتر ================= */
+function render(){
+ const app=document.getElementById('app');
+ const h=location.hash||'#/';
+ if(h.startsWith('#/arabic'))app.innerHTML=subjectPage();
+ else if(h.startsWith('#/teacher'))app.innerHTML=teacherPage();
+ else if(h.startsWith('#/exam')){app.innerHTML=examPage();bindExam();}
+ else app.innerHTML=homePage();
+}
+window.addEventListener('hashchange',()=>{render();window.scrollTo(0,0);});
+render();
+</script>
+
+<script>
+/* جسيمات الخلفية + إمالة الكروت ثلاثية الأبعاد */
+(function(){
+ var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var cv=document.getElementById('bg-stars');
+ if(cv&&!rm){
+  var ctx=cv.getContext('2d'),W,H,ps=[];
+  function size(){
+   var d=Math.min(devicePixelRatio||1,1.5);
+   W=cv.width=innerWidth*d;H=cv.height=innerHeight*d;
+   var N=Math.min(36,Math.round(innerWidth*innerHeight/28000));ps=[];
+   for(var i=0;i<N;i++)ps.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.4+.4)*d,
+    vx:(Math.random()-.5)*.08*d,vy:(Math.random()*.12+.03)*d,
+    a:Math.random()*.45+.15,tw:Math.random()*6.283,
+    c:Math.random()<.28?'94,231,255':(Math.random()<.5?'231,198,106':'220,228,255')});
+  }
+  size();addEventListener('resize',size);
+  var t=0;
+  (function loop(){
+   t+=.016;ctx.clearRect(0,0,W,H);
+   for(var i=0;i<ps.length;i++){var p=ps[i];
+    p.x+=p.vx;p.y-=p.vy;
+    if(p.y<-4){p.y=H+4;p.x=Math.random()*W}
+    if(p.x<-4)p.x=W+4;if(p.x>W+4)p.x=-4;
+    var a=p.a*(0.6+0.4*Math.sin(t*1.4+p.tw));
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);
+    ctx.fillStyle='rgba('+p.c+','+a.toFixed(3)+')';ctx.fill();
+   }
+   requestAnimationFrame(loop);
+  })();
+ }
+ if(matchMedia('(pointer:fine)').matches&&!rm){
+  var app=document.getElementById('app'),cur=null;
+  function reset(){if(cur){cur.style.transform='';cur=null}}
+  app.addEventListener('pointermove',function(e){
+   var el=e.target.closest?e.target.closest('.card,.row'):null;
+   if(cur&&cur!==el)reset();
+   if(!el)return;cur=el;
+   var r=el.getBoundingClientRect();
+   var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+   el.style.transform='perspective(900px) rotateX('+(-py*5).toFixed(2)+'deg) rotateY('+(px*6).toFixed(2)+'deg) translateY(-3px)';
+  });
+  app.addEventListener('pointerout',function(e){if(cur&&(!e.relatedTarget||!cur.contains(e.relatedTarget)))reset()});
+  addEventListener('hashchange',reset);
+ }
+})();
+</script>
+</body>
+</html>
