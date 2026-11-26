@@ -439,7 +439,7 @@ const answered=()=>st.ans.reduce((n,row)=>n+row.filter(a=>a!==null).length,0);
 const unanswered=()=>TOTAL-answered();
 const scores=()=>{const per=SECTIONS.map((s,i)=>s.qs.reduce((n,q,j)=>n+(st.ans[i][j]===q.answer?1:0),0));return{per,total:per.reduce((a,b)=>a+b,0)};};
 const detailsText=per=>SECTIONS.map((s,i)=>`${s.short} ${toAr(per[i])}/${toAr(s.qs.length)}`).join(' - ');
-const encourage=t=>t>=17?'🌟 ممتاز! نتيجة تشرّف، مستر محمود هيفتخر بيك':t>=14?'🎉 جيد جدًا! راجع أخطاءك بالأسفل وهتبقى من الأوائل':t>=10?'💪 ناجح! راجع أخطاءك وحاول تاني، هتطلع أحسن':'📖 محتاج تراجع الدروس كويس وتعيد المحاولة، إنت تقدر';
+const encourage=t=>t>=17?'🌟 ممتاز! نتيجة تشرّف':t>=14?'🎉 جيد جدًا! راجع أخطاءك بالأسفل وهتبقى من الأوائل':t>=10?'💪 ناجح! راجع أخطاءك وحاول تاني، هتطلع أحسن':'📖 محتاج تراجع الدروس كويس وتعيد المحاولة، إنت تقدر';
 
 const LESSON_FACTS=[
  ['المعرب والمبني','المعرب يتغير آخره بتغير موقعه في الجملة، والمبني يلزم حالة واحدة. الحروف كلها مبنية، والماضي والأمر مبنيان، والمضارع معرب إلا مع نون التوكيد أو نون النسوة'],
@@ -516,7 +516,7 @@ function examPage(){
      <ul class="breakdown">${SECTIONS.map((sec,i)=>`<li>${sec.short}: ${toAr(sc.per[i])} من ${toAr(sec.qs.length)}</li>`).join('')}</ul>
      <p class="send ${st.send}" role="status">${
        st.send==='sending'?'جاري تسجيل درجتك عند مستر محمود...':
-       st.send==='sent'?'✅ وصلت درجتك لمستر محمود تلقائيًا. راجع إجاباتك بالأسفل.':
+       st.send==='sent'?'✅ راجع إجاباتك بالأسفل.':
        st.send==='failed'?'سُلِّم امتحانك وحُسبت درجتك، لكن التسجيل التلقائي لم يكتمل. اضغط الزر بالأسفل وسيُسجَّل في ثوانٍ.':''}</p>
      ${st.send==='failed'?`<a class="retry" href="${fallbackHref()}" target="_blank" rel="noopener noreferrer">سجّل درجتي الآن</a><p class="hint">يفتح نموذجًا مكتوبًا فيه اسمك ودرجتك. اضغط «إرسال» في آخره وتظهر لك «لقد تم تسجيل ردك».</p>`:''}
    </div>`;
@@ -553,7 +553,7 @@ function renderSend(){
  box.querySelector('.send').className='send '+st.send;
  box.querySelector('.send').textContent=
    st.send==='sending'?'جاري تسجيل درجتك عند مستر محمود...':
-   st.send==='sent'?'✅ وصلت درجتك لمستر محمود تلقائيًا. راجع إجاباتك بالأسفل.':
+   st.send==='sent'?'✅ راجع إجاباتك بالأسفل.':
    st.send==='failed'?'سُلِّم امتحانك وحُسبت درجتك، لكن التسجيل التلقائي لم يكتمل. اضغط الزر بالأسفل وسيُسجَّل في ثوانٍ.':'';
  if(st.send==='failed'&&!box.querySelector('.retry')){
   box.insertAdjacentHTML('beforeend',`<a class="retry" href="${fallbackHref()}" target="_blank" rel="noopener noreferrer">سجّل درجتي الآن</a><p class="hint">يفتح نموذجًا مكتوبًا فيه اسمك ودرجتك. اضغط «إرسال» في آخره وتظهر لك «لقد تم تسجيل ردك».</p>`);
